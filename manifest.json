@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "Wikidata One Click Info",
+    "version": "1.0.0",
+    "action": {
+        "default_icon" : {
+        
+    },
+    "default_title": "Wikidata One Click Info",
+    "default_popup": "Popup/popup.html"
+},
+    "description": "This is an extension to look up data from Wikidata",
+    "icons": {
+
+    },
+    "author": "Wikidata OCI team",
+    "content_scripts":[
+        {
+            "matches":[
+                "<all_urls>"
+            ],
+            "js":["page.js"]
+        }
+    ],
+    "permission":[
+        "activeTab"
+    ]
+    
+}
