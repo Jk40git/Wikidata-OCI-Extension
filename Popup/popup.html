@@ -9,12 +9,23 @@
   <body>
     <h2 id="error"></h2>
     <div>
-      <search id="search"></search>
+      <!-- Display the highlighted item in a box -->
+      <section id="word"></section>
     </div>
-    <div id="result"></div>
+    <!-- Display the result on the popup -->
+    <div id="result">
+      <p>
+        <li></li>
+      </p>
+    </div>
+    <!-- Result manipulation if the result is more than 2 items -->
     <div id="navigate container" class="navigate-container hidenavigator">
       <span id="prev" class="navig-prev"></span>
       <span id="next" class="navig-next"></span>
+    </div>
+    <!-- Render the wikidata search page based on the selected word -->
+    <div>
+      <a href="">More details visit Wikidata</a>
     </div>
 
     <script src="popup.js" type="js"></script>
