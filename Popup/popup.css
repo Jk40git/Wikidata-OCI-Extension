@@ -59,7 +59,7 @@ h2#error {
 }
 
 a {
-    display: block;
+    display: flex;
     text-align: center;
     margin: 10px;
     color: #4CAF50;
@@ -68,4 +68,5 @@ a {
 
 a:hover {
     text-decoration: underline;
+    text-align: right;
 }
