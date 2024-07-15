@@ -1,6 +1,18 @@
 :root{
     counter-reset: headings;
 }
+ol{
+    counter-increment: headings;
+}
+
+ol::before{
+    content: counter(headings);
+    background-color: rgb(107, 107, 205);
+    border-radius: 2px;
+    padding: .15em 0;
+    width: 40px;
+    text-align: center;
+}
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
