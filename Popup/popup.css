@@ -3,14 +3,15 @@
 }
 ol{
     counter-increment: headings;
+    color: white;
 }
 
 ol::before{
     content: counter(headings);
     background-color: rgb(107, 107, 205);
     border-radius: 2px;
-    padding: .15em 0;
-    width: 40px;
+    padding: 0.15em 0.5px;
+    width: 60px;
     text-align: center;
 }
 
