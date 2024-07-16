@@ -74,18 +74,47 @@ h2#error {
 .navig-prev:hover, .navig-next:hover {
     background-color: #45a049;
 }
-
-a {
+.navigate-container{
     display: flex;
-    text-align: center;
-    margin: 10px;
-    color: #4CAF50;
-    text-decoration: none;
+    align-items: center;
+}
+.navigate-container{
+    flex-grow: 1;
 }
 
-a:hover {
+.navigate-container a {
+    font-size: 0.1em;
+    color: #4CAF50;
+    text-decoration: none;
+    margin-left: auto;
+}
+
+.navigate-container a:hover {
     text-decoration: underline;
     text-align: right;
+}
+
+.navigate-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigate-container a {
+    margin-left: auto;
+}
+
+.close-button{
+    background-color: #4CAF50;
+    color: White;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor:pointer;
+    margin-left: 10px;
+}
+
+.close-button:hover{
+    background-color: #45a049;
 }
 
 #first-result{
