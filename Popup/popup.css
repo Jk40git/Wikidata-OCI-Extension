@@ -94,6 +94,7 @@ h2#error {
     border-radius: 5px;
     cursor: pointer;
     font-size: 12px;
+    justify-content: space-between;
 }
 
 .navig-prev:hover, .navig-next:hover {
