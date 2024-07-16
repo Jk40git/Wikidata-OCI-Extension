@@ -107,10 +107,15 @@ h2#error {
 .close-button{
     background-color: #4CAF50;
     color: White;
-    padding: 5px 10px;
+    padding: 20px 20px;
     border-radius: 5px;
     cursor:pointer;
     margin-left: 10px;
+    border: none;
+}
+
+.close-button i{
+    font-size: 2em;
 }
 
 .close-button:hover{
