@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="popup.css" />
-  </head>
 
-  <body>
-    <h2 id="error"></h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
 
-    <div id="Zoom">
+<body>
+  <h2 id="error"></h2>
 
-    </div>
-    <div>
-      <!-- Display the highlighted item in a box -->
-      <section id="word"></section>
-    </div>
-    <!-- Display the result on the popup -->
-    <div id="result">
-      <p>
+  <div id="Zoom"></div>
+  <div>
+    <!-- Display the highlighted item in a box -->
+    <section id="word"></section>
+  </div>
+  <!-- Display the result on the popup -->
+  <div id="result">
+    <section>
+      <div id="first-result">
         <ol></ol>
-    
+      </div>
+      
+      <div id="second-result">
         <ol></ol>
-        
-        <ol></ol>
-      </p>
-    </div>
-    <!-- Result manipulation if the result is more than 2 items -->
-    <div id="navigate container" class="navigate-container hidenavigator">
-      <span id="prev" class="navig-prev">Prev</span>
-      <span id="next" class="navig-next">Next</span>
-    </div>
-    <!-- Render the wikidata search page based on the selected word -->
-    <div class="wikidata">
-      <a href="">View details on Wikidata</a>
-    </div>
-    <div> 
-      <button id="">close</button>
-      <icon src="" id=""></icon>
-    </div>
+      </div>
 
-    <script src="popup.js" type="js"></script>
-  </body>
+      <div id="third-result">
+        <ol></ol>
+      </div>
+    </section>
+  </div>
+  <!-- Result manipulation if the result is more than 2 items -->
+  <div id="navigate container" class="navigate-container hidenavigator">
+    <span id="prev" class="navig-prev">Prev</span>
+    <span id="next" class="navig-next">Next</span>
+  </div>
+  <!-- Render the wikidata search page based on the selected word -->
+  <div class="wikidata">
+    <a href="">View details on Wikidata</a>
+  </div>
+  <div>
+    <button id="">close</button>
+    <icon src="" id=""></icon>
+  </div>
+
+  <script src="popup.js" type="js"></script>
+</body>
+
 </html>
