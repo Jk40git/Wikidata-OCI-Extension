@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="popup.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 
 <body>
@@ -18,21 +18,11 @@
   </div>
   <!-- Display the result on the popup -->
   <div id="result">
-    <section>
-      <div id="first-result">
-        <ol></ol>
-      </div>
-      
-      <div id="second-result">
-        <ol></ol>
-      </div>
-
-      <div id="third-result">
-        <ol></ol>
-      </div>
-    </section>
+    <ol> 
+      <li></li>
+    </ol>
   </div>
-  <!-- Result manipulation if the result is more than 2 items -->
+  <!-- Result manipulation if the result is more than 1 page(3 items) -->
   <div id="navigate container" class="navigate-container hidenavigator">
     <span id="prev" class="navig-prev">Prev</span>
     <span id="next" class="navig-next">Next</span>
@@ -43,10 +33,6 @@
     <button id=""><i class="fas fa-times"></i></button>
     <icon src="" id=""></icon>
     <a href="#">View details on Wikidata</a>
-  </div>
-  <div>
-    
-    
   </div>
 
   <script src="popup.js" type="js"></script>

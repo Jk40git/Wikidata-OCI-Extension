@@ -1,26 +1,45 @@
 :root{
-    counter-reset: headings;
+    counter-reset: numbers;
 }
 ol{
-    counter-increment: headings;
     color: white;
+    margin-top: 10px;
+    padding-left: 30px;
+    list-style: none;
+}
+ol li{
+    counter-increment: numbers;
+    margin-top: 5px;
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
-ol::before{
-    content: counter(headings);
-    background-color: rgb(107, 107, 205);
-    border-radius: 2px;
-    padding: 0.15em 0.5px;
-    width: 60px;
-    text-align: center;
+ol li::before{
+    content: counter(numbers); 
+    background-color: #0071FF;
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+    color: #060606;
+    position: absolute;
+    left: -23px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    font-weight: bold;
 }
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
     margin: 0;
     padding: 0;
-    width: 300px;
-    background-color: #f9f9f9;
+    width: auto;
+    background-color: #f4f2f2;
+    color: white;
+    font-size: 13px;
+    height: auto;
 }
 
 h2#error {
@@ -38,11 +57,16 @@ h2#error {
 }
 
 #result {
+    font-family: Poppins;
     padding: 10px;
     margin: 10px;
     background-color: #ffffff;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    counter-reset: numbers;
+    color: #060606;
+    height: auto;
+    width: auto;
 }
 
 #result p {
@@ -55,7 +79,7 @@ h2#error {
     align-items: center;
     padding: 10px;
     margin: 10px;
-    background-color: #f1f1f1;
+    background-color: #ccc8c8;
     border-radius: 5px;
 }
 
@@ -69,6 +93,7 @@ h2#error {
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 12px;
 }
 
 .navig-prev:hover, .navig-next:hover {
@@ -83,10 +108,11 @@ h2#error {
 }
 
 .navigate-container a {
-    font-size: 0.1em;
-    color: #4CAF50;
+    display: flex ;
+    color: #0085d2;
     text-decoration: none;
     margin-left: auto;
+    text-wrap: wrap;
 }
 
 .navigate-container a:hover {
@@ -98,10 +124,6 @@ h2#error {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.navigate-container a {
-    margin-left: auto;
 }
 
 .close-button{
@@ -120,8 +142,4 @@ h2#error {
 
 .close-button:hover{
     background-color: #45a049;
-}
-
-#first-result{
-
 }
