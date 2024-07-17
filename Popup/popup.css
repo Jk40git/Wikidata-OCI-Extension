@@ -1,6 +1,7 @@
 :root{
     counter-reset: numbers;
 }
+
 ol{
     color: white;
     margin-top: 10px;
@@ -35,7 +36,7 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
     margin: 0;
     padding: 0;
-    width: auto;
+    min-width: 300px;
     background-color: #f4f2f2;
     color: white;
     font-size: 13px;
@@ -53,7 +54,9 @@ h2#error {
     padding: 10px;
     margin: 10px;
     border-radius: 5px;
-    text-align: center;
+    text-align:left;
+    color:#060606;
+    width: auto;
 }
 
 #result {
