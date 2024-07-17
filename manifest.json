@@ -21,9 +21,6 @@
             ],
             "js":["page.js"]
         }
-    ],
-    "permission":[
-        "activeTab"
     ]
     
 }
