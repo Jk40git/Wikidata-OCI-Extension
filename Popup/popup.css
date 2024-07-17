@@ -131,22 +131,28 @@ h2#error {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px;
+    margin: 10px;
+    background-color: #ccc8c8;
+    border-radius: 5px;
+    position: relative;
 }
 
 .close-button{
-    background-color: #4CAF50;
+    background-color: rgb(73, 73, 224);
     color: White;
-    padding: 20px 20px;
-    border-radius: 500px;
+    padding: 10px;
+    border-radius: 500%;
     cursor:pointer;
     margin-left: 10px;
     border: none;
     display: flex;
     align-items: center;
+    position: absolute;
 }
 
 .close-button i{
-    font-size: 2em;
+    font-size: 0.8em;
 }
 
 .close-button:hover{
