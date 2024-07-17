@@ -153,9 +153,9 @@ h2#error {
     background-color: red;
 }
 
-.zoom-container {
+.action-container {
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
     margin: 10px;
 }
 
@@ -172,6 +172,15 @@ h2#error {
 
 .zoom-button i {
     font-size: 1.5em;
+}
+
+#icon{
+    width: 40px;
+    height: 40px;
+}
+
+.spacer{
+    flex-grow: 1;
 }
 
 .zoom-button:hover {

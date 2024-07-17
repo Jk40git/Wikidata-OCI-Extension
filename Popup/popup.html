@@ -12,12 +12,18 @@
   <h2 id="error"></h2>
 
   <div id="Zoom"></div>
+
   <!-- Zoom in and Zoom out buttons -->
-  <div class="zoom-container">
+  <div class="action-container">
+    <img src="images/moon.png" id="icon">
+    <img src="images/sun.png" id="icon">
+    <div class="spacer"></div>
     <button id="zoom-in" class="zoom-button"><i class="fas fa-search-plus"></i></button>
     <button id="zoom-out" class="zoom-button"><i class="fas fa-search-minus"></i></button>
   </div>
+
   <div>
+
     <!-- Display the highlighted item in a box -->
     <section id="word"></section>
   </div>
@@ -27,11 +33,13 @@
       <li></li>
     </ol>
   </div>
+
   <!-- Result manipulation if the result is more than 1 page(3 items) -->
   <div id="navigate container" class="navigate-container hidenavigator">
     <span id="prev" class="navig-prev">Prev</span>
     <span id="next" class="navig-next">Next</span>
   </div>
+
   <!-- Render the wikidata search page based on the selected word -->
   <div class="navigate-container">
     <div class="spacer"></div>
