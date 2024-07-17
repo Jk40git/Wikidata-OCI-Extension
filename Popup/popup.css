@@ -137,7 +137,7 @@ h2#error {
     background-color: #4CAF50;
     color: White;
     padding: 20px 20px;
-    border-radius: 50px;
+    border-radius: 500px;
     cursor:pointer;
     margin-left: 10px;
     border: none;
@@ -155,14 +155,14 @@ h2#error {
 
 .zoom-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     margin: 10px;
 }
 
 .zoom-button {
-    background-color:blue;
+    background-color:rgb(83, 83, 221);
     color: white;
-    padding: 10px 15px;
+    padding: 7px 7px;
     border-radius: 5px;
     cursor: pointer;
     margin: 0 5px;
@@ -175,5 +175,5 @@ h2#error {
 }
 
 .zoom-button:hover {
-    background-color: #45a049;
+    background-color:green;
 }
