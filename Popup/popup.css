@@ -166,23 +166,23 @@ h2#error {
 }
 
 .zoom-button {
-    background-color:rgb(83, 83, 221);
+    background-color:#0085d2;
     color: white;
     padding: 7px 7px;
     border-radius: 5px;
     cursor: pointer;
     margin: 0 5px;
     border: none;
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 .zoom-button i {
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 #icon{
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
 }
 
 .spacer{
