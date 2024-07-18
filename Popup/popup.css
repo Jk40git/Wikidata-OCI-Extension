@@ -47,7 +47,6 @@ h2#error {
     color: red;
     text-align: center;
     margin: 10px 0;
-    overflow: hidden;
 }
 
 #word {
@@ -71,7 +70,7 @@ h2#error {
     color: #060606;
     height: auto;
     width: auto;
-    overflow: hidden;
+    overflow:hidden;
     resize: both;
 }
 
