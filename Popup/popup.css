@@ -41,6 +41,7 @@ body {
     color: white;
     font-size: 13px;
     height: auto;
+    position: relative;
 }
 
 h2#error {
@@ -135,27 +136,6 @@ h2#error {
     background-color: #ccc8c8;
     border-radius: 5px;
     position: relative;
-}
-
-.close-button{
-    background-color:  #0085d2;
-    color: White;
-    padding: 10px;
-    border-radius: 500%;
-    cursor:pointer;
-    margin-left: 10px;
-    border: none;
-    display: flex;
-    align-items: center;
-    position: absolute;
-}
-
-.close-button i{
-    font-size: 0.7em;
-}
-
-.close-button:hover{
-    background-color: red;
 }
 
 .action-container {
