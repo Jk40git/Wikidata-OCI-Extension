@@ -18,11 +18,11 @@ ol li{
 
 ol li::before{
     content: counter(numbers); 
-    background-color: #0071FF;
+    background-color: #2e598d;
     border-radius: 50%;
     height: 16px;
     width: 16px;
-    color: #060606;
+    color:#ffffff;
     position: absolute;
     left: -23px;
     display:flex;
@@ -38,7 +38,7 @@ body {
     padding: 0;
     min-width: 300px;
     background-color: #f4f2f2;
-    color: white;
+    color:#060606;
     font-size: 13px;
     height: auto;
     position: relative;
@@ -98,7 +98,7 @@ h2#error {
 } */
 
 .navig-prev, .navig-next {
-    background-color: #4CAF50;
+    background-color:#438447;
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
@@ -120,7 +120,7 @@ h2#error {
 
 .navigate-container a {
     display: flex ;
-    color: #0085d2;
+    color: #2e598d;
     text-decoration: none;
     margin-left: auto;
     text-wrap: wrap;
@@ -149,7 +149,7 @@ h2#error {
 }
 
 .zoom-button {
-    background-color:#0085d2;
+    background-color: #2e598d;
     color: white;
     padding: 2.5px 2.5px 1px 2.5px;
     border-radius: 5px;
@@ -173,5 +173,5 @@ h2#error {
 }
 
 .zoom-button:hover {
-    background-color:green;
+    background-color:#438447;
 }
