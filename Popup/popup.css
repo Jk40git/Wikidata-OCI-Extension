@@ -90,7 +90,6 @@ h2#error {
 .nav{
     display: flex;
     align-items: right;
-    justify-content: flex-end;
     margin-right: 5px;
 }
 
@@ -119,17 +118,15 @@ h2#error {
     flex-grow: 1;
 }
 
-.navigate-container a {
-    display: flex ;
+.nav a {
     color: #2e598d;
     text-decoration: none;
     margin-left: auto;
-    text-wrap: wrap;
 }
 
-.navigate-container a:hover {
+.nav a:hover {
     text-decoration: underline;
-    text-align: right;
+    color: maroon;
 }
 
 .navigate-container {
