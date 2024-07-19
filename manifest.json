@@ -4,7 +4,8 @@
     "version": "1.0.0",
     "action": {
         "default_icon" : {
-        
+
+        "1":"Icon/letter-w.png"
     },
     "default_title": "Wikidata One Click Info",
     "default_popup": "Popup/popup.html"
@@ -23,4 +24,8 @@
         }
     ]
     
+    ],
+    "permission":[
+        "activeTab"
+    ]   
 }
