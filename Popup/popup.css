@@ -89,9 +89,7 @@ h2#error {
     border-radius: 5px;
 }
 .nav{
-    display: flex;
-    align-items: right;
-    margin-right: 5px;
+    
 }
 
 /* .navigate-container .hiddenavigator {
@@ -162,11 +160,6 @@ h2#error {
     font-size: 3em;
 }
 
-#icon{
-    width: 20px;
-    height: 20px;
-}
-
 .spacer{
     flex-grow: 1;
 }
@@ -175,22 +168,12 @@ h2#error {
     background-color:#438447;
 }
 
-.nav{
-    display: flex;
-    align-items: center;
-    gap:10px;
-}
-
 #dark-mode-toggle{
     background: none;
     border: none;
     font-size: 15px;
-    padding: 20px;
     cursor: pointer;
     color: inherit;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 body.dark-mode{
