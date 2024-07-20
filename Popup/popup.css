@@ -89,9 +89,11 @@ h2#error {
     border-radius: 5px;
 }
 .nav{
-    flex-grow: 1;
+    display: flex;
 }
-
+.link{
+    justify-content: flex-end;
+}
 /* .navigate-container .hiddenavigator {
     display: none;
 } */
