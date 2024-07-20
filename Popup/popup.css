@@ -174,3 +174,38 @@ h2#error {
 .zoom-button:hover {
     background-color:#438447;
 }
+
+.nav{
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
+
+#dark-mode-toggle{
+    background: none;
+    border: none;
+    font-size: 15px;
+    padding: 20px;
+    cursor: pointer;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.dark-mode{
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode h2{
+    color: #ffffff;
+}
+
+body.dark-mode .zoom-button{
+    color: #ffffff;
+}
+
+body.dark-mode .fas.fa-moon{
+    color: #ffffff;
+}
