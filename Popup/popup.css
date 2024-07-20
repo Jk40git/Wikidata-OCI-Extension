@@ -89,7 +89,7 @@ h2#error {
     border-radius: 5px;
 }
 .nav{
-    
+    flex-grow: 1;
 }
 
 /* .navigate-container .hiddenavigator {
@@ -171,9 +171,10 @@ h2#error {
 #dark-mode-toggle{
     background: none;
     border: none;
-    font-size: 15px;
+    font-size: 14px;
     cursor: pointer;
     color: inherit;
+    margin-right: 150px;
 }
 
 body.dark-mode{
