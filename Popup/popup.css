@@ -1,5 +1,8 @@
 :root {
     counter-reset: numbers;
+    --clr-dark: #070a13;
+    --clr-light: #f1f5f9;
+
 }
 
 ol {
