@@ -13,6 +13,8 @@
     "description": "This is an extension to look up data from Wikidata",
     "icons": {
 
+         "2": "Icon/dark-mode.jpg",
+         "44":"Icon/128px-Wikidata-logo-en.svg.png"
     },
     "author": "Wikidata OCI team",
     "content_scripts":[
