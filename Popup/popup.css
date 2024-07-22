@@ -41,7 +41,7 @@ body {
     margin: 0;
     padding: 0;
     min-width: 250px;
-    background-color: #f4f2f2;
+    background-color:white;
     color: #060606;
     font-size: 13px;
     height: auto;
@@ -69,7 +69,7 @@ h2#error {
     font-family: Poppins;
     padding: 10px;
     margin: 10px;
-    background-color: #ffffff;
+    background-color: #ffffffce;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     counter-reset: numbers;
@@ -100,7 +100,8 @@ h2#error {
 .link {
     justify-content: flex-end;
     cursor: pointer;
-    width: 30px;
+    width: 33px;
+    height: 22px;
 }
 
 /* .navigate-container .hiddenavigator {
@@ -149,7 +150,7 @@ h2#error {
     align-items: center;
     padding: 10px;
     margin: 10px;
-    background-color: #ccc8c8;
+    background-color: #e0e0e0;
     border-radius: 5px;
     position: relative;
 }
