@@ -100,8 +100,8 @@ h2#error {
 .link {
     justify-content: flex-end;
     cursor: pointer;
-    width: 33px;
-    height: 22px;
+    width: 30px;
+    height: 23px;
 }
 
 /* .navigate-container .hiddenavigator {
