@@ -1,8 +1,3 @@
-// get the currently active tab in the current window
-// and then invoke the callback function readTabs.
-let query = { active: true, currentWindow: true };
-chrome.tabs.query(query, readTabs);
-
 // Interaction with the zoom button
 document.getElementById('zoom-in').addEventListener('click', function() 
 {
@@ -14,17 +9,15 @@ document.getElementById('zoom-out').addEventListener('click', function()
     document.body.style.zoom = parseFloat(document.body.style.zoom || 1) - 0.1;
 });
 
-const themeToggleBtn = document.querySelector('.theme-toggle');
+// Dark mode interaction
+var content = document.getElementsByTagName('body')[0];
+var darkMode = document.getElementById('dark-mode-toggle');
+darkMode.addEventListener('click',()=>{
+    darkMode.classList.toggle('active');
+    content.classList.toggle('night');
+})
 
-const theme = localStorage.getItem('theme');
-
-theme && document.body.classList.add(theme);
-
-themeToggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    if (document.body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark-mode');
-    } else {
-        localStorage.removeItem('theme');
-    }
-});
+// get the currently active tab in the current window
+// and then invoke the callback function readTabs.
+// let query = { active: true, currentWindow: true };
+// chrome.tabs.query(query, readTabs);

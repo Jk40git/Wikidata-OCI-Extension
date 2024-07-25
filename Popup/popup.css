@@ -1,8 +1,5 @@
 :root {
     counter-reset: numbers;
-    --clr-dark: #070a13;
-    --clr-light: #f1f5f9;
-
 }
 
 ol {
@@ -37,12 +34,10 @@ ol li::before {
 }
 
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     padding: 0;
     min-width: 250px;
-    background-color:white;
-    color: #060606;
     font-size: 13px;
     height: auto;
     position: relative;
@@ -52,7 +47,7 @@ body {
 h2#error {
     color: red;
     text-align: center;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 #word {
@@ -69,9 +64,8 @@ h2#error {
     font-family: Poppins;
     padding: 10px;
     margin: 10px;
-    background-color: #ffffffce;
     border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0.5, 0.5);
     counter-reset: numbers;
     color: #060606;
     height: auto;
@@ -184,30 +178,34 @@ h2#error {
     background-color: #438447;
 }
 
-#dark-mode-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: inherit;
-    width: 20px;
-    height: 20px;
-    background-color: #f4f2f2;
+label {
+    position: absolute;
+    border: 2px solid;
+    border-radius: 20px;
+    width: 22px;
+    height: 12px;
     margin-left: 9px;
+    margin-top: 5px;
 }
 
-body.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
+label::before {
+    position: absolute;
+    content: '';
+    left: 0.25px;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    background: #000;
+    transition: 0.4s;
 }
 
-body.dark-mode h2 {
-    color: #ffffff;
+label.active:before {
+    left: 11px;
+    background: white;
 }
 
-body.dark-mode .zoom-button {
-    color: #ffffff;
-}
-
-body.dark-mode .fas.fa-moon {
+body.night {
+    background: #000;
     color: #ffffff;
 }
