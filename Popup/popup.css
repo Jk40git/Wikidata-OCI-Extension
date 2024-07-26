@@ -209,18 +209,3 @@ body.night {
     background: #000;
     color: #ffffff;
 }
-
-.language-switcher{
-    display: flex;
-    align-items: center;
-}
-
-.language-switcher label{
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-#language-select{
-    padding: 5px;
-    font-size: 12px;
-}
