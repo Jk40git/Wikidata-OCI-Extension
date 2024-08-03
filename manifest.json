@@ -12,9 +12,10 @@
 },
     "description": "This is an extension to look up data from Wikidata",
     "icons": {
-
-         "2": "Icon/night-mode.png",
-         "44":"Icon/1024px-Wikidata-logo.svg.png"
+         
+         "5": "Icon/1024px-Wikidata-logo.svg.png",
+         "48": "Icon/Wiki logo 5.png",
+         "44": "Icon/Wiki logo 5.png"
     },
     "author": "Wikidata OCI team",
     "content_scripts":[
