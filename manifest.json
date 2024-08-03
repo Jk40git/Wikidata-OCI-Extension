@@ -5,7 +5,7 @@
     "action": {
         "default_icon" : {
 
-        "1":""
+        "1":"Icon/Wiki logo 3 ash2.png"
     },
     "default_title": "Wikidata One Click Info",
     "default_popup": "Popup/popup.html"
