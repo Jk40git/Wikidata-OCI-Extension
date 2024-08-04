@@ -14,8 +14,8 @@
     "icons": {
          
          "5": "Icon/1024px-Wikidata-logo.svg.png",
-         "48": "Icon/Wiki logo 5.png",
-         "44": "Icon/Wiki_logo_3_update.png"
+         "48": "Icon/Wiki_logo_3_update.png",
+         "44": "Icon/Wiki logo 5.png"
     },
     "author": "Wikidata OCI team",
     "content_scripts":[
