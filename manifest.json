@@ -5,7 +5,7 @@
     "action": {
         "default_icon" : {
 
-        "1":"Icon/Wiki_logo_3_update.png"
+        "1": "Icon/Wiki_logo_3_update.png"
     },
     "default_title": "Wikidata One Click Info",
     "default_popup": "Popup/popup.html"
@@ -15,7 +15,7 @@
          
          "5": "Icon/1024px-Wikidata-logo.svg.png",
          "48": "Icon/Wiki logo 5.png",
-         "44": "Icon/Wiki logo 5.png"
+         "44": "Icon/Wiki_logo_3_update.png"
     },
     "author": "Wikidata OCI team",
     "content_scripts":[
