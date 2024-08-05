@@ -2,6 +2,7 @@
     counter-reset: numbers;
 }
 
+
 ol {
     color: white;
     margin-top: 10px;
@@ -148,6 +149,15 @@ h2#error {
     border-radius: 5px;
     position: relative;
 }
+
+.lang {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Space between the language dropdown and the zoom buttons */
+    margin: 10px;
+}
+
 
 .action-container {
     display: flex;
