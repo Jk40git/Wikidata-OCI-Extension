@@ -154,7 +154,7 @@ h2#error {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     align-items: center;
-    margin-right: 10px; /* Space between the language dropdown and the zoom buttons */
+    margin-right: 10px; 
     margin: 10px;
 }
 
