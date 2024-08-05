@@ -156,8 +156,16 @@ h2#error {
     align-items: center;
     margin-right: 10px; 
     margin: 10px;
+    border: none;
 }
 
+.control {
+    border: none;
+}
+
+select:focus:hover{
+  outline: none;
+}
 
 .action-container {
     display: flex;
