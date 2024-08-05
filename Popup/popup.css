@@ -163,7 +163,7 @@ h2#error {
     border: none;
 }
 
-select:focus:hover{
+select:focus{
   outline: none;
 }
 
