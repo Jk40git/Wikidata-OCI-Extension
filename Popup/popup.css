@@ -162,8 +162,12 @@ h2#error {
 .control {
     border: none;
 }
+select:hover {
+    
+    cursor: pointer;
+}
 
-select:focus{
+select:focus {
   outline: none;
 }
 
@@ -215,12 +219,14 @@ label::before {
     width: 12px;
     height: 12px;
     background: #000;
+    color: #ffffff;
     transition: 0.4s;
 }
 
 label.active:before {
     left: 11px;
     background: white;
+    color: #000;
 }
 
 body.night {
