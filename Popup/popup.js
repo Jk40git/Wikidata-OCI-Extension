@@ -52,7 +52,7 @@ function displayResults(data) {
       const listItem = document.createElement('li');
       console.log('search.label', search);
       // listItem.textContent = search.label; // Adjust based on actual structure
-      listItem.innerHTML = `<div >
+      listItem.innerHTML = `<div style="align-items:flex-start; justify-content: start;" >
       <h5>
       ${search.label}
       </h5>

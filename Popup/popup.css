@@ -33,6 +33,7 @@ ol li::before {
   justify-content: center;
   font-size: 1em;
   font-weight: bold;
+  
 }
 li{
     color: #000;
