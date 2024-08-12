@@ -79,9 +79,10 @@ h2#error {
   font-size: small;
 }
 
-#result_ol{
-
+li h6 {
+  color: #000;
 }
+
 #result p {
   margin: 0;
 }
