@@ -56,15 +56,10 @@ h2#error {
   margin: 5px 0;
 }
 
-/* #word {
-  background-color: #e0e0e0;
-  padding: 10px;
-  margin: 10px;
-  border-radius: 5px;
-  text-align: left;
-  color: #060606;
-  width: auto;
-} */
+#word {
+  font-family: Poppins;
+  font-size:medium;
+}
 
 #result {
   font-family: Poppins;
@@ -76,12 +71,13 @@ h2#error {
   resize: both;
   padding-left: 5px;
   align-items:flex-start;
-  font-size: small;
 }
 
-li h6 {
+h6 {
+  font-family: Poppins;
   color: #000;
 }
+
 
 #result p {
   margin: 0;
@@ -176,12 +172,12 @@ select:hover {
   cursor: pointer;
   border-color: none;
 }
-
+/* 
 select:focus {
   box-sizing: none;
   border: none;
   outline-color: none;
-}
+} */
 
 .action-container {
   display: flex;
