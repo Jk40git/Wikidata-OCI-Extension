@@ -1,26 +1,26 @@
 /** @format */
 
 :root {
-  counter-reset: numbers;
+  counter-reset:"";
 }
 
-ol {
+ul {
   color: white;
   margin-top: 10px;
   padding-left: 30px;
   list-style: none;
 }
 
-ol li {
-  counter-increment: numbers;
+ul li {
+  counter-increment: "";
   margin-top: 5px;
   position: relative;
   display: flex;
   align-items: center;
 }
 
-ol li::before {
-  content: counter(numbers);
+ul li::before {
+  content: counter();
   background-color: #2e598d;
   border-radius: 50%;
   height: 16px;
@@ -56,7 +56,7 @@ h2#error {
   margin: 5px 0;
 }
 
-#word {
+/* #word {
   background-color: #e0e0e0;
   padding: 10px;
   margin: 10px;
@@ -64,24 +64,23 @@ h2#error {
   text-align: left;
   color: #060606;
   width: auto;
-}
+} */
 
 #result {
   font-family: Poppins;
-  padding: 10px;
-  margin: 10px;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0.5, 0.5);
-  counter-reset: numbers;
+  counter-reset: "";
   color: #0000;
-  height: auto;
-  width: auto;
   overflow: hidden;
   resize: both;
+  padding-left: 5px;
+  align-items:flex-start;
+  font-size: small;
 }
 
-#result_ol {
-  color: #000 !important;
+#result_ol{
+
 }
 #result p {
   margin: 0;
@@ -105,13 +104,14 @@ h2#error {
   cursor: pointer;
   width: 30px;
   height: 23px;
+  margin-bottom: 10px;
 }
 
 /* .navigate-container .hiddenavigator {
     display: none;
 } */
 
-.navig-prev,
+/* .navig-prev,
 .navig-next {
   background-color: #438447;
   color: white;
@@ -120,21 +120,21 @@ h2#error {
   cursor: pointer;
   font-size: 10px;
   justify-content: space-between;
-}
-
+} */
+/* 
 .navig-prev:hover,
 .navig-next:hover {
   background-color: #45a049;
-}
+} */
 
-.navigate-container {
+/* .navigate-container {
   display: flex;
   align-items: center;
-}
+} */
 
-.navigate-container {
+/* .navigate-container {
   flex-grow: 1;
-}
+} */
 
 .nav a {
   color: #2e598d;
@@ -142,12 +142,12 @@ h2#error {
   margin-left: auto;
 }
 
-.nav a:hover {
+/* .nav a:hover {
   text-decoration: underline;
   color: maroon;
-}
+} */
 
-.navigate-container {
+/* .navigate-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -156,26 +156,30 @@ h2#error {
   background-color: #e0e0e0;
   border-radius: 5px;
   position: relative;
-}
+} */
 
 .lang {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   align-items: center;
   margin-right: 10px;
   margin: 10px;
-  border: none;
 }
+
 
 .control {
   border: none;
+  color: #000;
+  background-color: #ffffff;
 }
 select:hover {
   cursor: pointer;
+  border-color: none;
 }
 
 select:focus {
-  outline: none;
+  box-sizing: none;
+  border: none;
+  outline-color: none;
 }
 
 .action-container {
@@ -192,7 +196,7 @@ select:focus {
   cursor: pointer;
   margin: 0 5px;
   border: none;
-  font-size: 0.3em;
+  font-size: 0.25em;
 }
 
 .zoom-button i {
@@ -211,27 +215,27 @@ label {
   position: absolute;
   border: 2px solid;
   border-radius: 20px;
-  width: 22px;
-  height: 12px;
-  margin-left: 9px;
+  width: 28px;
+  height: 16px;
+  margin-left: 8px;
   margin-top: 5px;
 }
 
 label::before {
   position: absolute;
   content: '';
-  left: 0.25px;
+  left: 0px;
   border-radius: 50%;
   cursor: pointer;
-  width: 12px;
-  height: 12px;
+  width: 13px;
+  height: 13px;
   background: #000;
   color: #ffffff;
   transition: 0.4s;
 }
 
 label.active:before {
-  left: 11px;
+  left: 14px;
   background: white;
   color: #000;
 }
@@ -239,4 +243,8 @@ label.active:before {
 body.night {
   background: #000;
   color: #ffffff;
+}
+
+#page {
+  margin-top: 10px;
 }
