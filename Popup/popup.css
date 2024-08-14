@@ -87,14 +87,14 @@ h6 {
   margin: 0;
 }
 
-.navigate-container {
+/* .navigate-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 5px;
   margin: 5px;
   border-radius: 5px;
-}
+} */
 
 .nav {
   display: flex;
@@ -160,12 +160,10 @@ h6 {
 } */
 
 .lang {
-  display: flex;
-  align-items: center;
-  margin-right: 10px;
-  margin: 10px;
+  margin-top: 14.5px;
+  margin-bottom: 17px;
+  
 }
-
 
 .control {
   border: none;
@@ -187,28 +185,31 @@ select:focus {
 
 .action-container {
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  margin: 0px;
 }
 
-.zoom-button {
-  background-color: #2e598d;
-  color: white;
-  padding: 2.5px 2.5px 1px 2.5px;
-  border-radius: 5px;
+.zoom-button{
+margin-left: 4.3em;
+margin-top: 10px;
+margin-bottom: 17px;
+}
+
+.zoom-button button{
   cursor: pointer;
-  margin: 0 5px;
-  border: none;
-  font-size: 0.25em;
+}
+
+#zoom-in {
+  border: inset;
+}
+
+#zoom-out {
+  border: outset;
 }
 
 .zoom-button i {
-  font-size: 3em;
+  font-size: 1em;
 }
 
-.spacer {
-  flex-grow: 1;
-}
 
 /* .zoom-button:hover {
   background-color: #438447;
