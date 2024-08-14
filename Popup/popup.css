@@ -189,20 +189,30 @@ select:focus {
 }
 
 .zoom-button{
-margin-left: 4.3em;
-margin-top: 10px;
-margin-bottom: 17px;
+  display: flex; 
+  justify-content: flex-end;
+  position: relative;
+  margin-left: 4.3em;
+  margin-top: 10px;
+  margin-bottom: 17px;
 }
 
 .zoom-button button{
+  display: flex; 
+  justify-content: flex-end;
+  position: relative;
   cursor: pointer;
 }
 
 #zoom-in {
+  display: flex; 
+  justify-content: flex-end;
+  position: relative;
   border: inset;
 }
 
 #zoom-out {
+  
   border: outset;
 }
 
@@ -251,4 +261,8 @@ body.night {
 
 #page {
   margin-top: 10px;
+}
+
+.card-body {
+  padding: 10px; /* Adjust this value to reduce/increase the padding */
 }
