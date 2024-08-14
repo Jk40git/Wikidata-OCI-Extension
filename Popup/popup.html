@@ -1,3 +1,5 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,14 +21,14 @@
 </head>
 
 <body>
-  <div class="container mt-5">
+  <div class="container">
 
     <!-- Error Message (if any) -->
     <div class="alert alert-danger d-none" id="error" role="alert"></div>
 
     <div id="Zoom"></div>
 
-    <!-- Zoom in, Zoom out buttons and Language options -->
+    <!-- Zoom in,  Zoom out buttons and Language options -->
     <div class="action-container">
       <div class="lang">
         <select class="form-select form-select-sm" aria-label=".form-select-sm example">
@@ -48,6 +50,7 @@
           <option value="Twi">Twi</option>
         </select>
       </div>
+      <div class="spacer"></div>
       <button id="zoom-out" class="btn btn-outline-primary btn-sm btn-floating m-1">
         <i class="fas fa-search-minus"></i>
       </button>
@@ -60,8 +63,6 @@
     <div class="card shadow-2-strong">
       <div class="card-body text-center">
         <h5 class="card-title">Selected Word</h5>
-        <p id="word" class="card-text">Word that is selected</p>
-      </div>
     </div>
 
     <!-- Display the result on the popup -->
@@ -73,6 +74,7 @@
         </li>
       </ul>
     </div>
+
 
     <!-- Result manipulation if the result is more than 1 page (3 items) -->
     <div class="d-flex justify-content-center mt-4" id="page">
@@ -94,6 +96,7 @@
         </ul>
       </nav>
     </div>
+
 
     <!-- Render the wikidata search page based on the selected word -->
     <div class="nav">
