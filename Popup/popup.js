@@ -14,7 +14,22 @@ var darkMode = document.getElementById('dark-mode-toggle');
 darkMode.addEventListener('click', () => {
   darkMode.classList.toggle('active');
   content.classList.toggle('night');
+
+  if (content.classList.contains("night")) {
+    theme = "DARK"
+  } else {
+    theme = "LIGHT"
+  }
+
+  localStorage.setItem('PageTheme', JSON.stringify(theme))
+
 })
+
+let getTheme = JSON.parse(localStorage.getItem("PageTheme"))
+
+if (getTheme === "DARK") {
+  document.body.classList = 'night'
+} 
 
 async function fetchEntities(searchTerm, language = 'en') {
   const endpoint = 'https://www.wikidata.org/w/api.php';
