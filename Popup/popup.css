@@ -240,8 +240,8 @@ label::before {
   left: 0px;
   border-radius: 50%;
   cursor: pointer;
-  width: 14px;
-  height: 14px;
+  width: 13px;
+  height: 13px;
   background: #000;
   color: #ffffff;
   transition: 0.4s;
