@@ -162,7 +162,7 @@ h6 {
 .lang {
   margin-top: 14.5px;
   margin-bottom: 17px;
-  
+
 }
 
 .control {
@@ -188,8 +188,8 @@ select:focus {
   margin: 0px;
 }
 
-.zoom-button{
-  display: flex; 
+.zoom-button {
+  display: flex;
   justify-content: flex-end;
   position: relative;
   margin-left: 4.3em;
@@ -197,22 +197,22 @@ select:focus {
   margin-bottom: 17px;
 }
 
-.zoom-button button{
-  display: flex; 
+.zoom-button button {
+  display: flex;
   justify-content: flex-end;
   position: relative;
   cursor: pointer;
 }
 
 #zoom-in {
-  display: flex; 
+  display: flex;
   justify-content: flex-end;
   position: relative;
   border: inset;
 }
 
 #zoom-out {
-  
+
   border: outset;
 }
 
@@ -229,7 +229,7 @@ label {
   position: absolute;
   border: 2px solid;
   border-radius: 20px;
-  width: 28px;
+  width: 29px;
   height: 16px;
   margin-left: 8px;
   margin-top: 5px;
@@ -241,8 +241,8 @@ label::before {
   left: 0px;
   border-radius: 50%;
   cursor: pointer;
-  width: 13px;
-  height: 13px;
+  width: 14px;
+  height: 14px;
   background: #000;
   color: #ffffff;
   transition: 0.4s;
@@ -264,5 +264,6 @@ body.night {
 }
 
 .card-body {
-  padding: 10px; /* Adjust this value to reduce/increase the padding */
+  padding: 10px;
+  /* Adjust this value to reduce/increase the padding */
 }
