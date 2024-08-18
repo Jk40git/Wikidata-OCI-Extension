@@ -1,4 +1,4 @@
-/** @format */
+
 // Interaction with the zoom button
 document.getElementById('zoom-in').addEventListener('click', function () {
   document.body.style.zoom = parseFloat(document.body.style.zoom || 1) + 0.1;
