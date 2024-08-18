@@ -29,7 +29,8 @@ let getTheme = JSON.parse(localStorage.getItem("PageTheme"))
 
 if (getTheme === "DARK") {
   document.body.classList = 'night'
-} 
+  darkMode.classList.toggle('active')
+}
 
 async function fetchEntities(searchTerm, language = 'en') {
   const endpoint = 'https://www.wikidata.org/w/api.php';
