@@ -1,211 +1,204 @@
 :root {
-    counter-reset: numbers;
+  counter-reset: "";
 }
 
-ol {
-    color: white;
-    margin-top: 10px;
-    padding-left: 30px;
-    list-style: none;
+ul {
+  color: white;
+  margin-top: 10px;
+  padding-left: 30px;
+  list-style: none;
 }
 
-ol li {
-    counter-increment: numbers;
-    margin-top: 5px;
-    position: relative;
-    display: flex;
-    align-items: center;
+ul li {
+  counter-increment: "";
+  margin-top: 5px;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
-ol li::before {
-    content: counter(numbers);
-    background-color: #2e598d;
-    border-radius: 50%;
-    height: 16px;
-    width: 16px;
-    color: #ffffff;
-    position: absolute;
-    left: -23px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1em;
-    font-weight: bold;
+ul li::before {
+  content: counter();
+  background-color: #2e598d;
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+  color: #ffffff;
+  position: absolute;
+  left: -23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  font-weight: bold;
+
+}
+
+li {
+  color: #000;
 }
 
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 0;
-    padding: 0;
-    min-width: 250px;
-    font-size: 13px;
-    height: auto;
-    position: relative;
-    text-align: center;
+  margin: 0;
+  padding: 0;
+  min-width: 250px;
+  font-size: 13px;
+  height: auto;
+  position: relative;
+  text-align: center;
 }
 
 h2#error {
-    color: red;
-    text-align: center;
-    margin: 5px 0;
+  color: red;
+  text-align: center;
+  margin: 5px 0;
 }
 
 #word {
-    background-color: #e0e0e0;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    text-align: left;
-    color: #060606;
-    width: auto;
+  font-family: Poppins;
+  font-size: medium;
 }
 
 #result {
-    font-family: Poppins;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0.5, 0.5);
-    counter-reset: numbers;
-    color: #060606;
-    height: auto;
-    width: auto;
-    overflow: hidden;
-    resize: both;
+  font-family: Poppins;
+  border-radius: 5px;
+  box-shadow: 0 0 3px rgba(0.3, 0.2, 0.3, 0.2);
+  counter-reset: "";
+  color: #0000;
+  overflow: hidden;
+  resize: both;
+  padding-left: 5px;
+  align-items: flex-start;
+  width: fit-content;
+  height: fit-content;
 }
+
+h6 {
+  font-family: Poppins;
+  color: #000;
+}
+
 
 #result p {
-    margin: 0;
-}
-
-.navigate-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 5px;
+  margin: 0;
 }
 
 .nav {
-    display: flex;
+  display: flex;
 }
 
 .link {
-    justify-content: flex-end;
-    cursor: pointer;
-    width: 30px;
-    height: 23px;
-}
-
-/* .navigate-container .hiddenavigator {
-    display: none;
-} */
-
-.navig-prev,
-.navig-next {
-    background-color: #438447;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 10px;
-    justify-content: space-between;
-}
-
-.navig-prev:hover,
-.navig-next:hover {
-    background-color: #45a049;
-}
-
-.navigate-container {
-    display: flex;
-    align-items: center;
-}
-
-.navigate-container {
-    flex-grow: 1;
+  justify-content: flex-end;
+  cursor: pointer;
+  width: 30px;
+  height: 23px;
+  margin-bottom: 10px;
 }
 
 .nav a {
-    color: #2e598d;
-    text-decoration: none;
-    margin-left: auto;
+  color: #2e598d;
+  text-decoration: none;
+  margin-left: auto;
 }
 
-.nav a:hover {
-    text-decoration: underline;
-    color: maroon;
+.lang {
+  margin-top: 14.5px;
+  margin-bottom: 17px;
+
 }
 
-.navigate-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    margin: 10px;
-    background-color: #e0e0e0;
-    border-radius: 5px;
-    position: relative;
+.control {
+  border: none;
+  color: #000;
+  background-color: #ffffff;
+}
+
+select:hover {
+  cursor: pointer;
+  border-color: none;
 }
 
 .action-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+  display: flex;
+  margin: 0px;
 }
 
 .zoom-button {
-    background-color: #2e598d;
-    color: white;
-    padding: 2.5px 2.5px 1px 2.5px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 0 5px;
-    border: none;
-    font-size: 0.3em;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  margin-left: 4.3em;
+  margin-top: 10px;
+  margin-bottom: 17px;
+}
+
+.zoom-button button {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  cursor: pointer;
+}
+
+#zoom-in {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  border: inset;
+}
+
+#zoom-out {
+
+  border: outset;
 }
 
 .zoom-button i {
-    font-size: 3em;
-}
-
-.spacer {
-    flex-grow: 1;
-}
-
-.zoom-button:hover {
-    background-color: #438447;
+  font-size: 1em;
 }
 
 label {
-    position: absolute;
-    border: 2px solid;
-    border-radius: 20px;
-    width: 22px;
-    height: 12px;
-    margin-left: 9px;
-    margin-top: 5px;
+  position: absolute;
+  border: 2px solid;
+  border-radius: 20px;
+  width: 29px;
+  height: 16px;
+  margin-left: 8px;
+  margin-top: 5px;
 }
 
 label::before {
-    position: absolute;
-    content: '';
-    left: 0.25px;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 12px;
-    height: 12px;
-    background: #000;
-    transition: 0.4s;
+  position: absolute;
+  content: '';
+  left: 0px;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 13px;
+  height: 13px;
+  background: #000;
+  color: #ffffff;
+  transition: 0.4s;
 }
 
 label.active:before {
-    left: 11px;
-    background: white;
+  left: 14px;
+  background: white;
+  color: #000;
 }
 
 body.night {
-    background: #000;
-    color: #ffffff;
+  background: #000;
+  color: #ffffff;
+}
+
+#page {
+  margin-top: 10px;
+}
+
+.card-body {
+  padding: 10px;
+  /* Adjust this value to reduce/increase the padding */
+}
+
+section {
+  display: block;
+  position: fixed;
 }
