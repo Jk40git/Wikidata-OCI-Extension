@@ -198,8 +198,3 @@ body.night {
   padding: 10px;
   /* Adjust this value to reduce/increase the padding */
 }
-
-section {
-  display: block;
-  position: fixed;
-}

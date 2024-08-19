@@ -68,59 +68,59 @@ function readTabs(tabs) {
       let swo = response.swor;
       swo = swo.replace(/[^a-zA-Z ]/g, "");
       fetchEntities(swo)
-      async function fetchEntities(searchTerm, language = 'en') {
-        const endpoint = 'https://www.wikidata.org/w/api.php';
+    }
+    async function fetchEntities(searchTerm, language = 'en') {
+      const endpoint = 'https://www.wikidata.org/w/api.php';
 
-        const params = new URLSearchParams({
-          action: 'wbsearchentities',
-          format: 'json',
-          search: searchTerm,
-          language: language,
-          limit: 7,
-          origin: '*',
-        });
+      const params = new URLSearchParams({
+        action: 'wbsearchentities',
+        format: 'json',
+        search: searchTerm,
+        language: language,
+        limit: 7,
+        origin: '*',
+      });
 
-        try {
-          const response = await fetch(`${endpoint}?${params}`);
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          const data = await response.json();
-          console.log(data);
-          return data;
-        } catch (error) {
-          console.error('Error fetching entities:', error);
-          throw error;
+      try {
+        const response = await fetch(`${endpoint}?${params}`);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
         }
+        const data = await response.json();
+        console.log(data);
+        return data;
+      } catch (error) {
+        console.error('Error fetching entities:', error);
+        throw error;
       }
+    }
 
-      // Function to update the word section with selected text
-      function updateWordSection(swo) {
-        const wordSection = document.getElementById('word');
-        if (wordSection) {
-          wordSection.textContent = swo;
-          fetchEntities(swo)
-            .then((data) => {
-              displayResults(data.search); // Call function to display results
-            })
-            .catch((error) => {
-              console.error('Error displaying results:', error);
-            });
-        }
+    // Function to update the word section with selected text
+    function updateWordSection(swo) {
+      const wordSection = document.getElementById('word');
+      if (wordSection) {
+        wordSection.textContent = swo;
+        fetchEntities(swo)
+          .then((data) => {
+            displayResults(data.search); // Call function to display results
+          })
+          .catch((error) => {
+            console.error('Error displaying results:', error);
+          });
       }
+    
+    // Function to display search results
+    function displayResults(data) {
+      console.log('data', data);
+      const resultList = document.getElementById('result').querySelector('ol');
+      resultList.innerHTML = ''; // Clear previous results
 
-      // Function to display search results
-      function displayResults(data) {
-        console.log('data', data);
-        const resultList = document.getElementById('result').querySelector('ol');
-        resultList.innerHTML = ''; // Clear previous results
-
-        if (data && data) {
-          data.forEach((search) => {
-            const listItem = document.createElement('li');
-            console.log('search.label', search);
-            // listItem.textContent = search.label; // Adjust based on actual structure
-            listItem.innerHTML = `<div style="align-items:flex-start; justify-content: start;" >
+      if (data && data) {
+        data.forEach((search) => {
+          const listItem = document.createElement('li');
+          console.log('search.label', search);
+          // listItem.textContent = search.label; // Adjust based on actual structure
+          listItem.innerHTML = `<div style="align-items:flex-start; justify-content: start;" >
       <h5>
       ${search.label}
       </h5>
@@ -128,15 +128,15 @@ function readTabs(tabs) {
       ${search.description}
       </p>
       </div>`;
-            resultList.appendChild(listItem);
-          });
-        } else {
-          const noResultsItem = document.createElement('li');
-          noResultsItem.textContent = 'No results found';
-          resultList.appendChild(noResultsItem);
-        }
+          resultList.appendChild(listItem);
+        });
+      } else {
+        const noResultsItem = document.createElement('li');
+        noResultsItem.textContent = 'No results found';
+        resultList.appendChild(noResultsItem);
       }
     }
+  }
   });
 }
 
