@@ -1,35 +1,75 @@
+// get the currently active tab in the current window
+// and then invoke the callback function gotTabs.
+let query = { active: true, currentWindow: true };
+chrome.tabs.query(query, readTabs);
 
-// Interaction with the zoom button
-document.getElementById('zoom-in').addEventListener('click', function () {
-  document.body.style.zoom = parseFloat(document.body.style.zoom || 1) + 0.1;
-});
+// function to check current url and eliminate offline urls.
+function safeUrl(url) {
+  return url.startsWith("https://") || url.startsWith("http://");
+}
 
-document.getElementById('zoom-out').addEventListener('click', function () {
-  document.body.style.zoom = parseFloat(document.body.style.zoom || 1) - 0.1;
-});
+// callback function
+function readTabs(tabs) {
+  // prevent offline urls to run the extension by throwing error.
+  if (!safeUrl(tabs[0].url)) {
+    document.getElementById("error").innerHTML = "Oops!!!";
+    document.getElementById("word").innerHTML = "Unsupported Page.";
+    document.getElementById("popup").innerHTML = "Please move to a url supported page!"
+    return;
+  }
+  // Interaction with the zoom button
+  document.getElementById('zoom-in').addEventListener('click', function () {
+    document.body.style.zoom = parseFloat(document.body.style.zoom || 1) + 0.1;
+  });
 
-// Dark mode interaction
-var content = document.getElementsByTagName('body')[0];
-var darkMode = document.getElementById('dark-mode-toggle');
-darkMode.addEventListener('click', () => {
-  darkMode.classList.toggle('active');
-  content.classList.toggle('night');
+  document.getElementById('zoom-out').addEventListener('click', function () {
+    document.body.style.zoom = parseFloat(document.body.style.zoom || 1) - 0.1;
+  });
 
-  if (content.classList.contains("night")) {
-    theme = "DARK"
-  } else {
-    theme = "LIGHT"
+  // Dark mode interaction
+  var content = document.getElementsByTagName('body')[0];
+  var darkMode = document.getElementById('dark-mode-toggle');
+  darkMode.addEventListener('click', () => {
+    darkMode.classList.toggle('active');
+    content.classList.toggle('night');
+
+    if (content.classList.contains("night")) {
+      theme = "DARK"
+    } else {
+      theme = "LIGHT"
+    }
+
+    localStorage.setItem('PageTheme', JSON.stringify(theme))
+
+  })
+
+  let getTheme = JSON.parse(localStorage.getItem("PageTheme"))
+
+  if (getTheme === "DARK") {
+    document.body.classList = 'night'
+    darkMode.classList.toggle('active')
   }
 
-  localStorage.setItem('PageTheme', JSON.stringify(theme))
 
-})
+  let msg = {
+    txt: "hello from popup",
+  };
 
-let getTheme = JSON.parse(localStorage.getItem("PageTheme"))
-
-if (getTheme === "DARK") {
-  document.body.classList = 'night'
-  darkMode.classList.toggle('active')
+  // send message to the content script
+  chrome.tabs.sendMessage(tabs[0].id, msg, function (response) {
+    if (!response) {
+      document.getElementById("popup").innerHTML =
+        "Refresh the page and try again.";
+    } else if (response.swor === "_TextNotSelected_") {
+      document.getElementById("word").innerHTML = "Welcome!";
+      document.getElementById("popup").innerHTML =
+        "Please select a word and click on the extension.";
+    } else {
+      let swo = response.swor;
+      swo = swo.replace(/[^a-zA-Z ]/g, "");
+      dictionary(swo);
+    }
+  });
 }
 
 async function fetchEntities(searchTerm, language = 'en') {
@@ -102,19 +142,19 @@ function displayResults(data) {
 }
 
 // Listen for messages from the content script
-chrome.runtime.onMessage.addListener((message) => {
-  if (message.text) {
-    updateWordSection(message.text);
-  }
-});
+// chrome.runtime.onMessage.addListener((message) => {
+//   if (message.text) {
+//     updateWordSection(message.text);
+//   }
+// });
 
 // Copy selected text to clipboard
-document.getElementById('copy-button').addEventListener('click', () => {
-  const wordSection = document.getElementById('word');
-  if (wordSection) {
-    navigator.clipboard
-      .writeText(wordSection.textContent)
-      .then(() => alert('Copied to clipboard!'))
-      .catch((err) => console.error('Failed to copy text: ', err));
-  }
-});
+// document.getElementById('copy-button').addEventListener('click', () => {
+//   const wordSection = document.getElementById('word');
+//   if (wordSection) {
+//     navigator.clipboard
+//       .writeText(wordSection.textContent)
+//       .then(() => alert('Copied to clipboard!'))
+//       .catch((err) => console.error('Failed to copy text: ', err));
+//   }
+// });

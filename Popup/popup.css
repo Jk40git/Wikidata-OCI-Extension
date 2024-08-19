@@ -48,10 +48,11 @@ body {
   text-align: center;
 }
 
-h2#error {
+#error {
   color: red;
   text-align: center;
-  margin: 5px 0;
+  margin: 5px;
+  font-family: sans-serif;
 }
 
 #word {

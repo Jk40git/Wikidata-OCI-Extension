@@ -9,10 +9,7 @@
     "default_title": "Wikidata One Click Info",
     "default_popup": "Popup/popup.html"
   },
-  "permissions": ["activeTab", "storage"],
-  "background": {
-    "service_worker": "background.js"
-  },
+
   "description": "This is an extension to look up data from Wikidata",
   "icons": {
     "5": "Icon/1024px-Wikidata-logo.svg.png",
@@ -23,7 +20,10 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js", "./Popup/popup.js"]
+      "js": ["content.js"]
     }
-  ]
+  ],
+  "permissions": [
+        "activeTab"
+      ]
 }
