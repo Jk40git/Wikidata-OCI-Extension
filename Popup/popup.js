@@ -59,7 +59,7 @@ function readTabs(tabs) {
   chrome.tabs.sendMessage(tabs[0].id, msg, function (response) {
     if (!response) {
       document.getElementById("popup").innerHTML =
-        "Refresh the page and try again.";
+        "Refresh the page and try again!";
     } else if (response.swor === "_TextNotSelected_") {
       document.getElementById("word").innerHTML = "Welcome!";
       document.getElementById("popup").innerHTML =

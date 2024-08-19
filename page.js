@@ -1,31 +1,20 @@
-// window.addEventListener("mouseup", handleSelection)
+window.addEventListener("mouseup", handleSelection);
 
-// let word;
+var selectedText;
 
-// function handleSelection() {
-//     // get the selected text
-//     word = window.getSelection();
-//     selectedWord = word.toString().toLowerCase().trim();
-//     console.log("worked")
-// }
+function handleSelection() {
+    selectedText = window.getSelection().toString().trim();
+}
 
-// // receive the word from popup
-// chrome.runtime.onMessage.addListener(gotOutput);
+// receive the message from popup.
+chrome.runtime.onMessage.addListener(gotMessage);
 
-// const data = function gotOutput() {
-//     let outPut =
-//         selectedWord && selectedWord.length > 0
-//             ? selectedWord = document.getElementById("word")
-//             : "_Text not selected, highlight a word_"
+function gotMessage(message, sender, sendResponse) {
+    let msg =
+        selectedText && selectedText.length > 0
+            ? selectedText
+            : "_TextNotSelected_";
 
-//     // send the output to the server
-//     sendResponse({ hword: outPut })
-//     console.log("worked")
-//     return outPut
-
-// }
-
-// // fetchEntities(data())
-// //     // fetchEntities('Cat', 'en')
-// //     .then(data => console.log(data))
-// //     .catch(error => console.error(error));
+    // send the selected text to the popup.js as a response to the message.
+    sendResponse({ swor: msg });
+}
