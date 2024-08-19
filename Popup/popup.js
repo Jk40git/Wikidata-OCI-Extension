@@ -55,7 +55,7 @@ function readTabs(tabs) {
     txt: "hello from popup",
   };
 
-  // send message to the content script
+  // send message to the page script
   chrome.tabs.sendMessage(tabs[0].id, msg, function (response) {
     if (!response) {
       document.getElementById("popup").innerHTML =
@@ -66,8 +66,8 @@ function readTabs(tabs) {
         "Please select a word and click on the extension.";
     } else {
       let swo = response.swor;
-      swo = swo.replace(/[^a-zA-Z ]/g, "");
-      fetchEntities(swo)
+      swo = swo.replace(/(\w+),(\W+)/g, "");
+      updateWordSection(swo)
     }
     async function fetchEntities(searchTerm, language = 'en') {
       const endpoint = 'https://www.wikidata.org/w/api.php';
