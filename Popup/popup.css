@@ -31,7 +31,6 @@ ul li::before {
   justify-content: center;
   font-size: 1em;
   font-weight: bold;
-
 }
 
 li {
@@ -46,6 +45,8 @@ body {
   height: auto;
   position: relative;
   text-align: center;
+  background-color: #ffffff;
+  color: #000;
 }
 
 #error {
@@ -72,6 +73,7 @@ body {
   align-items: flex-start;
   width: fit-content;
   height: fit-content;
+  background-color: #ffffff;
 }
 
 h6 {
