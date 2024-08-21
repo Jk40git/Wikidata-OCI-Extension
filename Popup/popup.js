@@ -20,10 +20,12 @@ function readTabs(tabs) {
   // Interaction with the zoom button
   document.getElementById('zoom-in').addEventListener('click', function () {
     document.body.style.zoom = parseFloat(document.body.style.zoom || 1) + 0.1;
+    this.blur();  //Remove focus after click
   });
 
   document.getElementById('zoom-out').addEventListener('click', function () {
     document.body.style.zoom = parseFloat(document.body.style.zoom || 1) - 0.1;
+    this.blur();  //Remove focus after click
   });
 
   // Dark mode interaction
@@ -39,9 +41,10 @@ function readTabs(tabs) {
       theme = "LIGHT"
     }
 
-    localStorage.setItem('PageTheme', JSON.stringify(theme))
+    localStorage.setItem('PageTheme', JSON.stringify(theme));
+    this.blur();
 
-  })
+  });
 
   let getTheme = JSON.parse(localStorage.getItem("PageTheme"))
 
