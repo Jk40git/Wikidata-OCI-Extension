@@ -222,4 +222,16 @@ document.addEventListener('DOMContentLoaded', function() {
       resultList.appendChild(noResultsItem);
     }
   }
+
+  //Remove focus from language selection after change
+  document.querySelector('.lang select').addEventListener('change', function () {
+    this.blur();
+  });
+
+  //Remove focus from any button after clicking
+  document.querySelectorAll('button').forEach(button => {
+    button.addEventListener('click', function() {
+      this.blur();
+    });
+  });
 });
