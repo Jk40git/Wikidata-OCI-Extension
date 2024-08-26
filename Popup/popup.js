@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   let query = { active: true, currentWindow: true };
   chrome.tabs.query(query, readTabs);
 
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
 
-    chrome.tabs.sendMessage(tabId, message, function(response) {
+    chrome.tabs.sendMessage(tabId, message, function (response) {
       if (chrome.runtime.lastError) {
         console.error("Could not send message to tab:", chrome.runtime.lastError.message);
         showError("", "", "Failed to send message. Refresh the page and try again.");
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const response = await fetch(`${endpoint}?${params}`);
     if (!response.ok) throw new Error('Network response was not ok');
-    
+
     return response.json();
   }
 
@@ -209,11 +209,17 @@ document.addEventListener('DOMContentLoaded', function() {
     if (paginatedData.length > 0) {
       paginatedData.forEach((item) => {
         const listItem = document.createElement('li');
-        listItem.innerHTML = `
-          <div style="align-items: flex-start; justify-content: start;">
-            <h5>${item.label}</h5>
-            <p>${item.description}</p>
-          </div>`;
+        listItem.innerHTML =
+          // <div style="align-items: flex-start; justify-content: start;">
+          //   <h5></h5>
+          //   <p></p>
+          // </div>;
+          `<ul class="list-group list-group-light">
+            <li class="list-group-item">
+              <h6 id="popup"> ${item.label} </h6>
+              <p class="text-muted mb-0"> ${item.description}  </p>
+            </li>
+          </ul>`
         resultList.appendChild(listItem);
       });
     } else {
@@ -230,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   //Remove focus from any button after clicking
   document.querySelectorAll('button').forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
       this.blur();
     });
   });

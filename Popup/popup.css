@@ -4,14 +4,14 @@
 
 ul {
   color: white;
-  margin-top: 10px;
+  margin-top: auto;
   padding-left: 30px;
   list-style: none;
 }
 
 ul li {
   counter-increment: "";
-  margin-top: 5px;
+  margin-top: 0px;
   position: relative;
   display: flex;
   align-items: center;
@@ -25,11 +25,11 @@ ul li::before {
   width: 16px;
   color: #ffffff;
   position: absolute;
-  left: -23px;
+  left: -20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1em;
+  font-size: 0.4em;
   font-weight: bold;
 }
 
@@ -71,8 +71,8 @@ body {
   resize: both;
   padding-left: 5px;
   align-items: flex-start;
-  width: fit-content;
-  height: fit-content;
+  width: auto;
+  height: auto;
   background-color: #ffffff;
 }
 
