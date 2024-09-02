@@ -111,6 +111,14 @@ document.addEventListener('DOMContentLoaded', function () {
       showError("", "Welcome!", "Please select a word and click on the extension.");
     } else {
       const word = cleanText(response.swor);
+
+      //Check if the user is online
+      if(!navigator.onLine) {
+        showError("Offline Mode", "You are offline!", "Please connect to the internet to use this feature.");
+        return;
+      }
+
+      
       updateWordSection(word);
     }
   }
