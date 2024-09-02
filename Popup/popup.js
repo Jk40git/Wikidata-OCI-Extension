@@ -113,12 +113,12 @@ document.addEventListener('DOMContentLoaded', function () {
       const word = cleanText(response.swor);
 
       //Check if the user is online
-      if(!navigator.onLine) {
-        showError("Offline Mode", "You are offline!", "Please connect to the internet to use this feature.");
+      if (!navigator.onLine) {
+        showError("Offline Mode", "", "Please connect to the internet to use this feature.");
         return;
       }
 
-      
+
       updateWordSection(word);
     }
   }
@@ -149,6 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
       format: 'json',
       search: searchTerm,
       language: language,
+      uselang: 'en',
       limit: 7,
       origin: '*',
     });
@@ -241,6 +242,16 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelector('.lang select').addEventListener('change', function () {
     this.blur();
   });
+
+
+  // document.getElementById('lang').addEventListener('change', handleSelect)
+  // function handleSelect(ev) { ()=> {
+
+  //   let select = ev.target;
+  //   console.log(ev)
+  //   fetchEntities(searchTerm, ev)
+
+  // }}
 
   //Remove focus from any button after clicking
   document.querySelectorAll('button').forEach(button => {
