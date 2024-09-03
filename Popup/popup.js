@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
       format: 'json',
       search: searchTerm,
       language: language,
-      uselang: 'en',
+      uselang: 'user',
       limit: 7,
       origin: '*',
     });
@@ -259,4 +259,30 @@ document.addEventListener('DOMContentLoaded', function () {
       this.blur();
     });
   });
+
+  // Fetch entities from Wikipedia API
+  async function fetchUrl(searchTerm) {
+    const endpoint = 'https://en.wikipedia.org/w/api.php';
+      searchTerm = word
+
+    try {
+       const response = await fetch(endpoint, params={'q': searchTerm});
+       const data = await response.json();
+       console.log(data)   
+       return data.url;   
+    } catch (error) {
+       console.error('Error fetching URL, No such item on wikipedia:', error);
+    }
+  }
+  // Function to set the href of the link
+  async function setLinkHref() {
+    const url = await fetchUrl();
+    if(url){
+      document.getElementById('word').href = url;
+    }
+    
+  }
+
+  document.addEventListener('DOMContentLoaded',setLinkHref);
+
 });
