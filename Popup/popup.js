@@ -64,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const savedTheme = localStorage.getItem("PageTheme");
     if (savedTheme === "DARK") {
       content.classList.add('night');
-      Clipboard.classList.add('night-card');
       darkModeToggle.classList.add('active');
     }
   }
