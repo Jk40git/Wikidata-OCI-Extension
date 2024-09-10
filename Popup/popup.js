@@ -76,7 +76,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Toggle the night class on body and card
     content.classList.toggle('night');
-    Clipboard.classList.toggle('night-card');
     darkModeToggle.classList.toggle('active');
 
     // Save the theme preference in localStorage
