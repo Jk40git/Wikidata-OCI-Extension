@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
   let query = { active: true, currentWindow: true };
   chrome.tabs.query(query, readTabs);
 
@@ -19,7 +19,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const tab = tabs[0];
     if (!safeUrl(tab.url)) {
-      showError("Oops!!!", "Unsupported Page.", "Please move to a supported page!");
+      showError(
+        "Oops!!!",
+        "Unsupported Page.",
+        "Please move to a supported page!"
+      );
       return;
     }
 
@@ -37,63 +41,75 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Setup zoom in and zoom out buttons
   function setupZoomButtons() {
-    document.getElementById('zoom-in').addEventListener('click', function () {
+    document.getElementById("zoom-in").addEventListener("click", function () {
       adjustZoom(0.1);
     });
 
-    document.getElementById('zoom-out').addEventListener('click', function () {
+    document.getElementById("zoom-out").addEventListener("click", function () {
       adjustZoom(-0.1);
     });
   }
 
   // Adjust zoom level
   function adjustZoom(zoomChange) {
-    document.body.style.zoom = parseFloat(document.body.style.zoom || 1) + zoomChange;
+    document.body.style.zoom =
+      parseFloat(document.body.style.zoom || 1) + zoomChange;
     this.blur();
   }
 
   // Setup dark mode toggle
   function setupDarkMode() {
     const content = document.body;
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const darkModeToggle = document.getElementById("dark-mode-toggle");
 
     // Add event listener to toggle dark mode
-    darkModeToggle.addEventListener('click', toggleDarkMode);
+    darkModeToggle.addEventListener("click", toggleDarkMode);
 
     // Check and apply the saved theme from localStorage
     const savedTheme = localStorage.getItem("PageTheme");
     if (savedTheme === "DARK") {
-      content.classList.add('night');
-      darkModeToggle.classList.add('active');
+      content.classList.add("night");
+      darkModeToggle.classList.add("active");
     }
   }
 
   // Toggle dark mode
   function toggleDarkMode() {
     const content = document.body;
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const darkModeToggle = document.getElementById("dark-mode-toggle");
 
     // Toggle the night class on body and card
-    content.classList.toggle('night');
-    darkModeToggle.classList.toggle('active');
+    content.classList.toggle("night");
+    darkModeToggle.classList.toggle("active");
 
     // Save the theme preference in localStorage
     const theme = content.classList.contains("night") ? "DARK" : "LIGHT";
-    localStorage.setItem('PageTheme', theme);
+    localStorage.setItem("PageTheme", theme);
   }
 
   // Send message to the active tab
   function sendMessageToTab(tabId, message) {
     if (!tabId) {
       console.error("Invalid tab ID");
-      showError("", "", "Unable to communicate with the tab. Please try again.");
+      showError(
+        "",
+        "",
+        "Unable to communicate with the tab. Please try again."
+      );
       return;
     }
 
     chrome.tabs.sendMessage(tabId, message, function (response) {
       if (chrome.runtime.lastError) {
-        console.error("Could not send message to tab:", chrome.runtime.lastError.message);
-        showError("", "", "Failed to send message. Refresh the page and try again.");
+        console.error(
+          "Could not send message to tab:",
+          chrome.runtime.lastError.message
+        );
+        showError(
+          "",
+          "",
+          "Failed to send message. Refresh the page and try again."
+        );
         return;
       }
       handleTabResponse(response);
@@ -108,16 +124,65 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (response.swor === "_TextNotSelected_") {
-      showError("", "Welcome!", "Please select a word and click on the extension.");
+      showError(
+        "",
+        "Welcome!",
+        "Please select a word and click on the extension."
+      );
     } else {
       const word = cleanText(response.swor);
 
+      const url = "https://en.wikipedia.org/w/api.php";
+
+      const params = new URLSearchParams();
+      params.append("action", "query");
+      params.append("list", "search");
+      params.append("srsearch", word); // Correct parameter for search query
+      params.append("format", "json");
+      params.append("origin", "*"); // Needed to bypass CORS
+
+      fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded", // Required by Wikipedia's API for POST requests
+        },
+        body: params.toString(), // Convert URLSearchParams to a string for the body
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json(); // Parse the response as JSON
+        })
+        .then((data) => {
+          console.log("Wikipedia search results:", data.query.search); // Display search results
+          const firstResult = data.query.search[0]; // Get the first search result
+          if (firstResult) {
+            const pageUrl = `https://en.wikipedia.org/?curid=${firstResult.pageid}`; // Build URL to Wikipedia page
+            document.getElementById("word").href = pageUrl; // Set the link href
+          }
+        })
+        .catch((error) => {
+          console.error(
+            "There has been a problem with your fetch operation:",
+            error
+          );
+        });
+
+      // Function to set the href of the link
+      document.addEventListener("DOMContentLoaded", () => {
+        // The href will be set in the .then block after fetching the URL
+      });
+
       //Check if the user is online
       if (!navigator.onLine) {
-        showError("Offline Mode", "", "Please connect to the internet to use this feature.");
+        showError(
+          "Offline Mode",
+          "",
+          "Please connect to the internet to use this feature."
+        );
         return;
       }
-
 
       updateWordSection(word);
     }
@@ -130,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Update the word section in the UI
   function updateWordSection(word) {
-    const wordSection = document.getElementById('word');
+    const wordSection = document.getElementById("word");
     wordSection.textContent = word;
 
     fetchEntities(word)
@@ -138,24 +203,24 @@ document.addEventListener('DOMContentLoaded', function () {
         setupPagination(data.search);
         displayResults(data.search, currentPage);
       })
-      .catch((error) => console.error('Error displaying results:', error));
+      .catch((error) => console.error("Error displaying results:", error));
   }
 
   // Fetch entities from Wikidata API
-  async function fetchEntities(searchTerm, language = 'en') {
-    const endpoint = 'https://www.wikidata.org/w/api.php';
+  async function fetchEntities(searchTerm, language = "en") {
+    const endpoint = "https://www.wikidata.org/w/api.php";
     const params = new URLSearchParams({
-      action: 'wbsearchentities',
-      format: 'json',
+      action: "wbsearchentities",
+      format: "json",
       search: searchTerm,
       language: language,
-      uselang: 'user',
+      uselang: language,
       limit: 7,
-      origin: '*',
+      origin: "*",
     });
 
     const response = await fetch(`${endpoint}?${params}`);
-    if (!response.ok) throw new Error('Network response was not ok');
+    if (!response.ok) throw new Error("Network response was not ok");
 
     return response.json();
   }
@@ -165,29 +230,35 @@ document.addEventListener('DOMContentLoaded', function () {
     const totalItems = data.length;
     const totalPages = Math.ceil(totalItems / itemsPerPage);
 
-    const pagination = document.querySelector('.pagination');
-    pagination.innerHTML = ''; // Clear existing pagination
+    const pagination = document.querySelector(".pagination");
+    pagination.innerHTML = ""; // Clear existing pagination
 
     // Previous button
-    const prevButton = createPageItem('&laquo;', currentPage > 1 ? currentPage - 1 : 1);
+    const prevButton = createPageItem(
+      "&laquo;",
+      currentPage > 1 ? currentPage - 1 : 1
+    );
     pagination.appendChild(prevButton);
 
     // Page numbers
     for (let i = 1; i <= totalPages; i++) {
       const pageItem = createPageItem(i, i);
       if (i === currentPage) {
-        pageItem.classList.add('active');
+        pageItem.classList.add("active");
       }
       pagination.appendChild(pageItem);
     }
 
     // Next button
-    const nextButton = createPageItem('&raquo;', currentPage < totalPages ? currentPage + 1 : totalPages);
+    const nextButton = createPageItem(
+      "&raquo;",
+      currentPage < totalPages ? currentPage + 1 : totalPages
+    );
     pagination.appendChild(nextButton);
 
     // Event listeners for pagination
-    pagination.querySelectorAll('.page-item').forEach(item => {
-      item.addEventListener('click', (e) => {
+    pagination.querySelectorAll(".page-item").forEach((item) => {
+      item.addEventListener("click", (e) => {
         e.preventDefault();
         const page = parseInt(item.dataset.page, 10);
         currentPage = page;
@@ -199,8 +270,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Create pagination item
   function createPageItem(label, page) {
-    const li = document.createElement('li');
-    li.className = 'page-item';
+    const li = document.createElement("li");
+    li.className = "page-item";
     li.dataset.page = page;
     li.innerHTML = `<a class="page-link" href="#">${label}</a>`;
     return li;
@@ -208,8 +279,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Display results in the popup based on the current page
   function displayResults(data, page) {
-    const resultList = document.getElementById('result').querySelector('ul');
-    resultList.innerHTML = ''; // Clear previous results
+    const resultList = document.getElementById("result").querySelector("ul");
+    resultList.innerHTML = ""; // Clear previous results
 
     const start = (page - 1) * itemsPerPage;
     const end = start + itemsPerPage;
@@ -217,7 +288,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (paginatedData.length > 0) {
       paginatedData.forEach((item) => {
-        const listItem = document.createElement('li');
+        const listItem = document.createElement("li");
         listItem.innerHTML =
           // <div style="align-items: flex-start; justify-content: start;">
           //   <h5></h5>
@@ -228,21 +299,22 @@ document.addEventListener('DOMContentLoaded', function () {
               <h6 id="popup"> ${item.label} </h6>
               <p class="text-muted mb-0"> ${item.description}  </p>
             </li>
-          </ul>`
+          </ul>`;
         resultList.appendChild(listItem);
       });
     } else {
-      const noResultsItem = document.createElement('li');
-      noResultsItem.textContent = 'No results found';
+      const noResultsItem = document.createElement("li");
+      noResultsItem.textContent = "No results found";
       resultList.appendChild(noResultsItem);
     }
   }
 
   //Remove focus from language selection after change
-  document.querySelector('.lang select').addEventListener('change', function () {
-    this.blur();
-  });
-
+  document
+    .querySelector(".lang select")
+    .addEventListener("change", function () {
+      this.blur();
+    });
 
   // document.getElementById('lang').addEventListener('change', handleSelect)
   // function handleSelect(ev) { ()=> {
@@ -254,35 +326,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // }}
 
   //Remove focus from any button after clicking
-  document.querySelectorAll('button').forEach(button => {
-    button.addEventListener('click', function () {
+  document.querySelectorAll("button").forEach((button) => {
+    button.addEventListener("click", function () {
       this.blur();
     });
   });
-
-  // Fetch entities from Wikipedia API
-  async function fetchUrl(searchTerm) {
-    const endpoint = 'https://en.wikipedia.org/w/api.php';
-      searchTerm = word
-
-    try {
-       const response = await fetch(endpoint, params={'q': searchTerm});
-       const data = await response.json();
-       console.log(data)   
-       return data.url;   
-    } catch (error) {
-       console.error('Error fetching URL, No such item on wikipedia:', error);
-    }
-  }
-  // Function to set the href of the link
-  async function setLinkHref() {
-    const url = await fetchUrl();
-    if(url){
-      document.getElementById('word').href = url;
-    }
-    
-  }
-
-  document.addEventListener('DOMContentLoaded',setLinkHref);
-
 });
