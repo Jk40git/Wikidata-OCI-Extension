@@ -206,6 +206,32 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch((error) => console.error("Error displaying results:", error));
   }
 
+  document.getElementById('lang').addEventListener('change', changeLanguage);
+
+  function changeLanguage() {
+    const langElement = document.getElementById('lang');
+    const selectedLanguage = langElement.value; // Get the selected value
+
+    if (selectedLanguage === 'aa') {
+      fetchEntities(word, 'aa')
+        .then(data => {
+          console.log('aa', data); // Log data after it's fetched
+        });
+    } else if (selectedLanguage === 'zh') {
+      fetchEntities(word, 'zh')
+        .then(data => {
+          console.log('zh', data); // Log data after it's fetched
+        });
+    }
+    // Example fetchEntities function (needs to be defined elsewhere in your code)
+    async function fetchEntities(word, selectedLanguage) {
+      // Make sure this function fetches the data based on the word and language
+      const response = await fetch(`https://www.wikidata.org/w/api.php/word=${word}&lang=${selectedLanguage}`);
+      const data = await response.json();
+      return data;
+    }
+  }
+
   // Fetch entities from Wikidata API
   async function fetchEntities(searchTerm, language = "en") {
     const endpoint = "https://www.wikidata.org/w/api.php";
@@ -224,6 +250,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     return response.json();
   }
+
 
   // Setup pagination controls
   function setupPagination(data) {
@@ -308,7 +335,7 @@ document.addEventListener("DOMContentLoaded", function () {
       resultList.appendChild(noResultsItem);
     }
   }
-
+  
   //Remove focus from language selection after change
   document
     .querySelector(".lang select")
@@ -331,4 +358,5 @@ document.addEventListener("DOMContentLoaded", function () {
       this.blur();
     });
   });
+
 });
