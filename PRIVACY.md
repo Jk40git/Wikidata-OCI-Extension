@@ -26,4 +26,6 @@ The Extension may include links or integrations to third-party websites. This Pr
 We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. Any modifications will be effective when we post the revised policy on the Chrome Web Store or notify you through the Extension.
 
 # Contact us:
-Any concerns or issues may be addressed [here](https://github.com/Jk40git/Wikidata-OCI-Extension/issues)
+Any concerns or issues may be addressed [here](https://github.com/Jk40git/Wikidata-OCI-Extension/issues) 
+Please refrain to install this extension if you don't agree with this policy. 
+### Thank you for installing [WOCI]() !!!
