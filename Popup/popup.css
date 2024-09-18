@@ -158,7 +158,7 @@ select:hover {
   font-size: 1em;
 }
 
-label {
+/* label {
   position: absolute;
   border: 2px solid;
   border-radius: 20px;
@@ -166,9 +166,9 @@ label {
   height: 16px;
   margin-left: 8px;
   margin-top: 5px;
-}
+} */
 
-label::before {
+/* label::before {
   position: absolute;
   content: '';
   left: 0px;
@@ -185,7 +185,7 @@ label.active:before {
   left: 14px;
   background: white;
   color: #000;
-}
+} */
 
 body.night {
   background: #000;
@@ -196,7 +196,6 @@ body.night {
   margin-top: 10px;
 }
 
-.card-body {
+/* .card-body {
   padding: 10px;
-  /* Adjust this value to reduce/increase the padding */
-}
+} */

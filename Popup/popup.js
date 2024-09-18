@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     setupZoomButtons();
-    setupDarkMode();
+    // setupDarkMode();
     sendMessageToTab(tab.id, { txt: "hello from popup" });
   }
 
@@ -58,34 +58,51 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Setup dark mode toggle
-  function setupDarkMode() {
-    const content = document.body;
-    const darkModeToggle = document.getElementById("dark-mode-toggle");
+  // function setupDarkMode() {
+  //   const content = document.body;
+  //   //   const darkModeToggle = document.getElementById("dark-mode-toggle");
 
-    // Add event listener to toggle dark mode
-    darkModeToggle.addEventListener("click", toggleDarkMode);
-
-    // Check and apply the saved theme from localStorage
-    const savedTheme = localStorage.getItem("PageTheme");
-    if (savedTheme === "DARK") {
-      content.classList.add("night");
-      darkModeToggle.classList.add("active");
-    }
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) {
+    loadDarkMode();
+  } else {
+    loadLightMode()
   }
 
-  // Toggle dark mode
-  function toggleDarkMode() {
-    const content = document.body;
-    const darkModeToggle = document.getElementById("dark-mode-toggle");
-
-    // Toggle the night class on body and card
-    content.classList.toggle("night");
-    darkModeToggle.classList.toggle("active");
-
-    // Save the theme preference in localStorage
-    const theme = content.classList.contains("night") ? "DARK" : "LIGHT";
-    localStorage.setItem("PageTheme", theme);
+  function loadDarkMode() {
+    document.body.style.backgroundColor = "#121212";
+    document.body.style.color = "#ffffff";
+    // document.getElementsByClassName("card shadow-2-strong").body.style.color = "#ffffff";
+    // document.body.getElementsByClassName("card shadow-2-strong").body.style.backgroundColor = "#121212";
   }
+
+  function loadLightMode() {
+    document.body.style.backgroundColor = "#ffffff";
+    document.body.style.color = "#000000";
+  }
+
+  // // Add event listener to toggle dark mode
+  // darkModeToggle.addEventListener("click", toggleDarkMode);
+
+  // // Check and apply the saved theme from localStorage
+  // const savedTheme = localStorage.getItem("PageTheme");
+  // if (savedTheme === "DARK") {
+  //   content.classList.add("night");
+  //   darkModeToggle.classList.add("active");
+  // }
+
+  // // Toggle dark mode
+  // function toggleDarkMode() {
+  //   const content = document.body;
+  //   const darkModeToggle = document.getElementById("dark-mode-toggle");
+
+  //   // Toggle the night class on body and card
+  //   content.classList.toggle("night");
+  //   darkModeToggle.classList.toggle("active");
+
+  //   // Save the theme preference in localStorage
+  //   const theme = content.classList.contains("night") ? "DARK" : "LIGHT";
+  //   localStorage.setItem("PageTheme", theme);
+  // }
 
   // Send message to the active tab
   function sendMessageToTab(tabId, message) {
@@ -205,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .catch((error) => console.error("Error displaying results:", error));
   }
-
+  // Language option implementation 
   document.getElementById('lang').addEventListener('change', changeLanguage);
 
   function changeLanguage() {
@@ -335,7 +352,7 @@ document.addEventListener("DOMContentLoaded", function () {
       resultList.appendChild(noResultsItem);
     }
   }
-  
+
   //Remove focus from language selection after change
   document
     .querySelector(".lang select")
