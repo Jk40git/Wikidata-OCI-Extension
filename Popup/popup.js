@@ -62,6 +62,8 @@ document.addEventListener("DOMContentLoaded", function () {
   //   const content = document.body;
   //   //   const darkModeToggle = document.getElementById("dark-mode-toggle");
 
+
+  // Dark mode setting
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches) {
     loadDarkMode();
   } else {
@@ -71,13 +73,21 @@ document.addEventListener("DOMContentLoaded", function () {
   function loadDarkMode() {
     document.body.style.backgroundColor = "#121212";
     document.body.style.color = "#ffffff";
-    // document.getElementsByClassName("card shadow-2-strong").body.style.color = "#ffffff";
-    // document.body.getElementsByClassName("card shadow-2-strong").body.style.backgroundColor = "#121212";
+
+    // Apply dark mode styling to the card
+    const card = document.querySelector(".card");
+    card.style.backgroundColor = "#1e1e1e"; 
+    card.style.color = "#ffffff";  
   }
 
   function loadLightMode() {
     document.body.style.backgroundColor = "#ffffff";
     document.body.style.color = "#000000";
+
+    // Revert card to light mode styling
+    const card = document.querySelector(".card");
+    card.style.backgroundColor = "#ffffff"; 
+    card.style.color = "#000000";  
   }
 
   // // Add event listener to toggle dark mode
@@ -338,12 +348,14 @@ document.addEventListener("DOMContentLoaded", function () {
           //   <h5></h5>
           //   <p></p>
           // </div>;
-          `<ul class="list-group list-group-light">
-            <li class="list-group-item">
-              <h6 id="popup"> ${item.label} </h6>
-              <p class="text-muted mb-0"> ${item.description}  </p>
-            </li>
-          </ul>`;
+          `<div>
+            <ul class="list-group list-group-light" class="card">
+              <li class="list-group-item">
+                <h6 id="popup"> ${item.label} </h6>
+                <p class="text-muted mb-0"> ${item.description}  </p>
+              </li>
+            </ul>
+          </div>`;
         resultList.appendChild(listItem);
       });
     } else {
