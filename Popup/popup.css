@@ -1,4 +1,4 @@
-:root {
+/* :root {
   counter-reset: "";
 }
 
@@ -35,7 +35,7 @@ ul li::before {
 
 li {
   color: #000;
-}
+} */
 
 body {
   margin: 0;
@@ -64,27 +64,20 @@ body {
 #result {
   font-family: Poppins;
   border-radius: 5px;
-  box-shadow: 0 0 3px rgba(0.3, 0.2, 0.3, 0.2);
-  counter-reset: "";
-  color: #0000;
+  box-shadow: 0 0 2px rgba(0.3, 0.2, 0.3, 0.2);
   overflow: hidden;
   resize: both;
-  padding-left: 5px;
+  /* padding-left: 5px; */
   align-items: flex-start;
-  width: auto;
-  height: auto;
-  background-color: #ffffff;
+  /* width: auto;
+  height: auto; */
 }
 
-h6 {
+/* h6 {
   font-family: Poppins;
   color: #000;
-}
+} */
 
-
-#result p {
-  margin: 0;
-}
 
 .nav {
   display: flex;
@@ -186,15 +179,15 @@ label.active:before {
   background: white;
   color: #000;
 } */
-
+/* 
 body.night {
   background: #000;
   color: #ffffff;
-}
+} */
 
-#page {
+/* #page {
   margin-top: 10px;
-}
+} */
 
 /* .card-body {
   padding: 10px;

@@ -450,13 +450,29 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function loadDarkMode() {
-    document.body.style.backgroundColor = "#121212";
+    document.body.style.backgroundColor = "#000";
     document.body.style.color = "#ffffff";
 
     // Apply dark mode styling to the card
     const card = document.querySelector(".card");
-    card.style.backgroundColor = "#1e1e1e";
+    card.style.backgroundColor = "#000";
     card.style.color = "#ffffff";
+
+    // Dark mode for the language option dropdown
+    const langDropdown = document.getElementById("lang");
+    langDropdown.style.backgroundColor = "#000";
+    langDropdown.style.color = "#ffffff";
+    langDropdown.style.border = "0.5px solid #000";
+
+    // Dark mode for the result box
+    const resultBox = document.getElementById("result");
+    resultBox.style.backgroundColor = "#000";
+    resultBox.style.color = "#ffffff";
+    resultBox.querySelectorAll("li").forEach((li) => {
+      li.style.backgroundColor = "#000";
+      li.style.color = "#ffffff";
+    });
+
   }
 
   function loadLightMode() {
@@ -467,6 +483,22 @@ document.addEventListener('DOMContentLoaded', function () {
     const card = document.querySelector(".card");
     card.style.backgroundColor = "#ffffff";
     card.style.color = "#000000";
+
+    // Light mode for the language option dropdown
+    const langDropdown = document.getElementById("lang");
+    langDropdown.style.backgroundColor = "#ffffff";
+    langDropdown.style.color = "#000000";
+    
+
+    // Light mode for the result box
+    const resultBox = document.getElementById("result");
+    resultBox.style.backgroundColor = "#ffffff";
+    resultBox.style.color = "#000000";
+    resultBox.querySelectorAll("li").forEach((li) => {
+      li.style.backgroundColor = "#ffffff";
+      li.style.color = "#000000";
+    });
+
   }
 
   // // Add event listener to toggle dark mode
@@ -675,22 +707,24 @@ document.addEventListener('DOMContentLoaded', function () {
     const endIndex = Math.min(startIndex + itemsPerPage, data.length);
     const paginatedData = data.slice(startIndex, endIndex);
 
+    // Check if dark mode is active
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
     if (paginatedData.length > 0) {
       paginatedData.forEach((item) => {
         console.log('item', item);
         const listItem = document.createElement('li');
-        listItem.innerHTML =
-          // <div style="align-items: flex-start; justify-content: start;">
-          //   <h5></h5>
-          //   <p></p>
-          // </div>;
-          `<ul class="list-group list-group-dark" >
-            <li class="list-group-item">
-              <h6 id="popup"> ${item.label} </h6>
-              <a href="${item.fullurl}" target="_blank">${item.label}</a>
-              <p class="text-muted mb-0"> ${item.description}  </p>
-            </li>
-          </ul>`;
+
+        // Create the result item with dark mode style
+        listItem.innerHTML = `
+        <ul class="list-group ${isDarkMode ? 'list-group-dark' : ''}">
+          <li class="list-group-item" style="${isDarkMode ? 'background-color: #000; color: #ffffff; border:0px' : ''}">
+            <h6 id="popup"> ${item.label} </h6>
+            <a href="${item.fullurl}" target="_blank" style="${isDarkMode ? 'color: #b3d4fc;' : ''}">${item.label}</a>
+            <p class="" style="${isDarkMode ? 'color: #ffffff;' : ''}"> ${item.description}  </p>
+          </li>
+        </ul>
+      `;
         resultList.appendChild(listItem);
       });
     } else {
@@ -698,13 +732,8 @@ document.addEventListener('DOMContentLoaded', function () {
       noResultsItem.textContent = 'No results found';
       resultList.appendChild(noResultsItem);
     }
-
-    // currentResults.forEach((result) => {
-    //   const li = document.createElement('li');
-    //   li.innerHTML = `<a href="${result.fullurl}" target="_blank">${result.label}</a>`;
-    //   resultList.appendChild(li);
-    // });
   }
+
 
   //Remove focus from any button after clicking
   document.querySelectorAll("button").forEach((button) => {
