@@ -717,15 +717,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Create the result item with dark mode style
         listItem.innerHTML = `
+        <a href="${item.fullurl}" target="_blank" style="text-decoration: none;">
         <ul class="list-group ${isDarkMode ? 'list-group-dark' : ''}">
           <li class="list-group-item" style="${isDarkMode ? 'background-color: #000; color: #ffffff; border:0px' : ''}">
-          <button class="result-button" style="${isDarkMode ? 'color: #b3d4fc; width: 100%; text-align: left; border: none; background: none' : 'border:none; background: none;'}" onclick="window.open('${item.fullurl}', '_blank')">
             <h6> ${item.label} </h6>
-            
             <p class="" style="${isDarkMode ? 'color: #ffffff;' : ''}"> ${item.description}  </p>
-          </button>  
           </li>
         </ul>
+        </a>
       `;
         resultList.appendChild(listItem);
       });

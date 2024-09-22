@@ -68,7 +68,7 @@ body {
   overflow: hidden;
   resize: both;
   /* padding-left: 5px; */
-  align-items: flex-start;
+  /* align-items: flex-start; */
   /* width: auto;
   height: auto; */
 }
