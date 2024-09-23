@@ -718,7 +718,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Create the result item with dark mode style
         listItem.innerHTML = `
         <a href="${item.fullurl}" target="_blank" style="text-decoration: none;">
-        <ul class="list-group ${isDarkMode ? 'list-group-dark' : ''}">
+        <ul class="list-group list-group-light ${isDarkMode ? 'list-group-dark' : ''}">
           <li class="list-group-item" style="${isDarkMode ? 'background-color: #000; color: #ffffff; border:0px' : ''}">
             <h6> ${item.label} </h6>
             <p class="" style="${isDarkMode ? 'color: #ffffff;' : ''}"> ${item.description}  </p>
@@ -728,6 +728,7 @@ document.addEventListener('DOMContentLoaded', function () {
       `;
         resultList.appendChild(listItem);
       });
+
     } else {
       const noResultsItem = document.createElement('li');
       noResultsItem.textContent = 'No results found';
