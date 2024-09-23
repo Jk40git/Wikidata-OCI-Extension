@@ -450,26 +450,26 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function loadDarkMode() {
-    document.body.style.backgroundColor = "#000";
-    document.body.style.color = "#ffffff";
+    document.body.style.backgroundColor = "#212121";
+    document.body.style.color = "#f1f1f1fb";
 
     // Apply dark mode styling to the card
     const card = document.querySelector(".card");
-    card.style.backgroundColor = "#000";
-    card.style.color = "#ffffff";
+    card.style.backgroundColor = "#151414";
+    card.style.color = "#f1f1f1fb";
 
     // Dark mode for the language option dropdown
     const langDropdown = document.getElementById("lang");
-    langDropdown.style.backgroundColor = "#000";
-    langDropdown.style.color = "#ffffff";
-    langDropdown.style.border = "0.5px solid #000";
+    langDropdown.style.backgroundColor = "#151414";
+    langDropdown.style.color = "#f1f1f1fb";
+    langDropdown.style.border = "0.5px solid #151414";
 
     // Dark mode for the result box
     const resultBox = document.getElementById("result");
-    resultBox.style.backgroundColor = "#000";
-    resultBox.style.color = "#ffffff";
+    resultBox.style.backgroundColor = "#212121";
+    resultBox.style.color = "#f1f1f1fb";
     resultBox.querySelectorAll("li").forEach((li) => {
-      li.style.backgroundColor = "#000";
+      li.style.backgroundColor = "#212121";
       li.style.color = "#ffffff";
     });
 
@@ -719,9 +719,9 @@ document.addEventListener('DOMContentLoaded', function () {
         listItem.innerHTML = `
         <a href="${item.fullurl}" target="_blank" style="text-decoration: none;">
         <ul class="list-group list-group-light ${isDarkMode ? 'list-group-dark' : ''}">
-          <li class="list-group-item" style="${isDarkMode ? 'background-color: #000; color: #ffffff; border:0px' : ''}">
+          <li class="list-group-item" style="${isDarkMode ? 'background-color: #212121; color: #f1f1f1fb; border:0px' : ''}">
             <h6> ${item.label} </h6>
-            <p class="" style="${isDarkMode ? 'color: #ffffff;' : ''}"> ${item.description}  </p>
+            <p class="" style="${isDarkMode ? 'color: #f1f1f1fb;' : ''}"> ${item.description}  </p>
           </li>
         </ul>
         </a>
