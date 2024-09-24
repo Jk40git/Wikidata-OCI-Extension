@@ -715,6 +715,9 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('item', item);
         const listItem = document.createElement('li');
 
+        //Add the 'result-item' class for the hover effect
+        listItem.classList.add('result-item');
+
         // Create the result item with dark mode style
         listItem.innerHTML = `
         <a href="${item.fullurl}" target="_blank" style="text-decoration: none;">
