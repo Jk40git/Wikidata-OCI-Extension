@@ -488,7 +488,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const langDropdown = document.getElementById("lang");
     langDropdown.style.backgroundColor = "#ffffff";
     langDropdown.style.color = "#000000";
-    
+
 
     // Light mode for the result box
     const resultBox = document.getElementById("result");
@@ -578,7 +578,7 @@ document.addEventListener('DOMContentLoaded', function () {
         );
         return;
       }
-
+      currentWord = word; // Store the word for use in language change
       updateWordSection(word);
     }
   }
@@ -602,17 +602,24 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Language option implementation
+
   document.getElementById('lang').addEventListener('change', changeLanguage);
 
   function changeLanguage() {
     const langElement = document.getElementById('lang');
     const selectedLanguage = langElement.value; // Get the selected value
 
-    fetchEntities(word, selectedLanguage)
-      .then((data) => {
-        console.log(selectedLanguage, data); // Log data after it's fetched
-      })
-      .catch((error) => console.error('Error fetching entities:', error));
+    if (currentWord) {
+      fetchEntities(currentWord, selectedLanguage)
+        .then((data) => {
+          console.log('data', data);
+          setupPagination(data.search);
+          displayResults(data.search, currentPage);
+        })
+        .catch((error) => {
+          console.error('Error fetching results for selected language:', error);
+        });
+    }
   }
 
   // Fetch entities from Wikidata API
