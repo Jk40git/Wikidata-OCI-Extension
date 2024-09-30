@@ -15,12 +15,11 @@ Read more about a particular item : Click on any item that you want to know more
 
 ## Features
 
-    <div align="center">
-    * Highlight any word on a webpage and instantly retrieve a summary from wikidata.
-    * Click on any result on the popup to read more information on the item clicked on Wikipedia through its sitelink.
-    * Supports multiple languages (based on Wikidata's language availability), switch to the convenient language from the language option.
-    * Works with Chrome and Firefox.
-    </div>
+ - Highlight any word on a webpage and instantly retrieve a summary from wikidata.
+ - Click on any result on the popup to read more information on the item clicked on Wikipedia through its sitelink.
+ - Supports multiple languages (based on Wikidata's language availability), switch to the convenient language from the language option.
+ - Works with Chrome and Firefox.
+    
 
 ## Installation
 
@@ -51,4 +50,4 @@ The seamless data in Wikidata OCI is possible, Thanks to the wonderful [Wikidata
 We welcome contributions! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
 
 ## License
-This project is licensed under the BSD 3-Clause License . See the LICENSE file for details.
+This project is licensed under the BSD 3-Clause License . See the [LICENSE](https://github.com/Jk40git/Wikidata-OCI-Extension/blob/main/LICENSE) file for details.
