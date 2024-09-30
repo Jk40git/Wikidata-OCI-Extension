@@ -9,8 +9,11 @@ This extension operates with the action API and wikidata's sitelinks. This [arti
 ## Usage
 
 Select Text : Highlight any word you want to know or learn more about.
+</br>
 Click Extension Icon : Click the Wikidata OCI Extension icon in your browser’s toolbar.
+</br>
 View Summary : A pop-up will appear, displaying a short description of the selected word from Wikidata.
+</br>
 Read more about a particular item : Click on any item that you want to know more about.
 
 ## Features
