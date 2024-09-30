@@ -379,6 +379,7 @@
 // });
 
 document.addEventListener('DOMContentLoaded', function () {
+
   let query = { active: true, currentWindow: true };
   chrome.tabs.query(query, readTabs);
 
@@ -615,9 +616,11 @@ document.addEventListener('DOMContentLoaded', function () {
           console.log('data', data);
           setupPagination(data.search);
           displayResults(data.search, currentPage);
+
         })
         .catch((error) => {
           console.error('Error fetching results for selected language:', error);
+
         });
     }
   }
@@ -635,23 +638,41 @@ document.addEventListener('DOMContentLoaded', function () {
       origin: '*',
     });
 
-    const response = await fetch(`${endpoint}?${params}`);
-    if (!response.ok) throw new Error('Network response was not ok');
+    try {
+      const response = await fetch(`${endpoint}?${params}`);
+      if (!response.ok) throw new Error('Network response was not ok');
 
-    const data = await response.json();
-    // console.log('Wikipedia search results:', data.query.search);
-    // Construct Wikipedia URLs for the results
-    const resultsWithUrls = data.search.map((entity) => ({
-      id: entity.id,
-      label: entity.label,
-      fullurl: `https://en.wikipedia.org/wiki/${encodeURIComponent(
-        entity.label
-      )}`,
-      description: entity.description,
-    }));
+      const data = await response.json();
 
-    return { search: resultsWithUrls }; // Return results with URLs
+      if (!data.search || data.search.length === 0) {
+        throw new Error(`Language "${language}" no results found.`);
+      }
+
+      // Construct Wikipedia URLs for the results
+      const resultsWithUrls = data.search.map((entity) => ({
+        id: entity.id,
+        label: entity.label,
+        fullurl: `https://${language}.wikipedia.org/wiki/${encodeURIComponent(entity.label)}`,
+        description: entity.description,
+      }));
+
+      // Clear any error message if language and results are valid
+      document.getElementById('error').innerText = ''; // Clear the error
+
+      return { search: resultsWithUrls }; // Return results with URLs
+    } catch (error) {
+      // Display error message in the UI
+      document.getElementById('error').innerText = error.message;
+      console.error(error);
+    }
   }
+
+  // function showError(errorTitle, word, popupMessage) {
+  //   document.getElementById("error").innerHTML = errorTitle;
+  //   document.getElementById("word").innerHTML = word;
+  //   document.getElementById("popup").innerHTML = popupMessage;
+  // }
+
 
   // Setup pagination controls
   function setupPagination(data) {
