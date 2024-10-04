@@ -9,7 +9,11 @@ This extension operates with the action API and wikidata's sitelinks. This [arti
 
 ## Usage
 
-Select Text : Highlight any word you want to know or learn more about.
+
+https://github.com/user-attachments/assets/9a5a0316-ab46-48b4-b444-42af4e4928b3
+
+
+Select Text: Highlight any word you want to know or learn more about.
 </br>
 Click Extension Icon : Click the Wikidata OCI Extension icon in your browser’s toolbar.
 </br>
