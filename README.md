@@ -12,14 +12,15 @@ This extension operates with the action API and wikidata's sitelinks. This [arti
 
 https://github.com/user-attachments/assets/9a5a0316-ab46-48b4-b444-42af4e4928b3
 
+</br>
 
-Select Text: Highlight any word you want to know or learn more about.
+<i> Select Text </i>: Highlight any word you want to know or learn more about.
 </br>
-Click Extension Icon: Click the Wikidata OCI Extension icon in your browser’s toolbar.
+<i> Click Extension Icon</i>: Click the Wikidata OCI Extension icon in your browser’s toolbar.
 </br>
-View Summary: A pop-up will appear, displaying a short description of the selected word from Wikidata.
+<i>View Summary </i>: A pop-up will appear, displaying a short description of the selected word from Wikidata.
 </br>
-Read more about a particular item: Click on any item that you want to know more about.
+<i> Read more about a particular item</i> : Click on any item that you want to know more about.
 
 ## Features
 
@@ -47,9 +48,9 @@ Read more about a particular item: Click on any item that you want to know more 
 
 The extension utilizes the Wikidata API to retrieve concise summaries of the selected text and the wikipedia endpoint for the sitelinks URLS  
 
-The user highlights a word on a webpage.
-The extension sends a request to the Wikidata API to find the matching entity.
-If an entity is found, the extension retrieves and displays the summary in a pop-up with their corresponding sitelinks.
+The user highlights a word on a webpage. </br>
+The extension sends a request to the Wikidata API to find the matching entity. </br>
+If an entity is found, the extension retrieves and displays the summary in a pop-up with their corresponding sitelinks. </br>
 An Internet connection is needed for fetching data from Wikidata.
 
 The seamless data in Wikidata OCI is possible, Thanks to the wonderful [Wikidata Action API](https://www.wikidata.org/w/api.php)
