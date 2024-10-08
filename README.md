@@ -1,11 +1,11 @@
 ## Wikidata One Click Info Extension
 
-It's tedious to always open a new tab or take up your dictionary to look up for words' meaning or explanation while reading your favorite article, books, PDFs or when browsing and come across a word you want to know about. Wikidata OCI(One-Click-Info) Extension is here to help.
+It's always tedious to open a new tab or take up your dictionary to look for words' meanings or explanations while reading your favorite article, books, PDFs or when browsing and coming across a word you want to know about.
 </br>
+Wikidata OCI(One-Click-Info) Extension is here to help.
+**Wikidata OCI Extension** is an extension built with Wikidata API, when activated, will allow the user to select a word and click the extension to get a quick summary of the wikidata item or label selected or highlighted.
 
-**Wikidata OCI Extension** is an extension that is built with Wikidata API, when activated, will allow the user to select a word and click the extension to get a quick summary of the wikidata item or label selected or highlighted.
-
-This extension operates with the action API and wikidata's sitelinks. This [article]() is a good resource for learning more about the extension.
+This extension operates with the action API and Wikidata's sitelinks. This [article]() is a good resource for learning more about the extension.
 
 ## Usage
 
@@ -20,7 +20,7 @@ https://github.com/user-attachments/assets/9a5a0316-ab46-48b4-b444-42af4e4928b3
 </br>
 <i>View Summary </i>: A pop-up will appear, displaying a short description of the selected word from Wikidata.
 </br>
-<i> Read more about a particular item</i> : Click on any item that you want to know more about.
+<i> Read more about a particular item</i>: Click on any item that you want to know more about.
 
 ## Features
 
@@ -46,7 +46,7 @@ https://github.com/user-attachments/assets/9a5a0316-ab46-48b4-b444-42af4e4928b3
 
 ## How it works
 
-The extension utilizes the Wikidata API to retrieve concise summaries of the selected text and the wikipedia endpoint for the sitelinks URLS  
+The extension utilizes the Wikidata API to retrieve concise summaries of the selected text and the Wikipedia endpoint for the sitelinks URLS  
 
 The user highlights a word on a webpage. </br>
 The extension sends a request to the Wikidata API to find the matching entity. </br>
