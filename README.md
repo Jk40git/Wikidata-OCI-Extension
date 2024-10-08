@@ -42,7 +42,7 @@ https://github.com/user-attachments/assets/9a5a0316-ab46-48b4-b444-42af4e4928b3
 
 #### Firefox
 
-1. Download the extension from the [Firefox Add-ons Store]().
+1. Download the extension from the [Firefox Add-ons Store](https://addons.mozilla.org/addon/wikidata-one-click-info/).
 2. Pin the extension to your toolbar for quick access.
 3. Select a word or phrase, click the extension, and view the Wikidata summary!
 
