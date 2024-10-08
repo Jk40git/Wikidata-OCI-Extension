@@ -1,11 +1,13 @@
 ## Wikidata One Click Info Extension
 
-It's always tedious to open a new tab or take up your dictionary to look for words' meanings or explanations while reading your favorite article, books, PDFs or when browsing and coming across a word you want to know about.
+<p>It's always tedious to open a new tab or take up your dictionary to look for words' meanings or explanations while reading your favorite article, books, PDFs or when browsing and coming across a word you want to know about.
 </br>
-Wikidata OCI(One-Click-Info) Extension is here to help.
+Wikidata OCI(One-Click-Info) Extension is here to help.</p>
+</br>
+
 **Wikidata OCI Extension** is an extension built with Wikidata API, when activated, will allow the user to select a word and click the extension to get a quick summary of the wikidata item or label selected or highlighted.
 
-This extension operates with the action API and Wikidata's sitelinks. This [article]() is a good resource for learning more about the extension.
+This extension operates with the action API and Wikidata's sitelinks. This [article](https://medium.com/@esaukondo/wikidata-one-click-info-extension-woci-7b65c74a70bc) is a good resource for learning more about the extension.
 
 ## Usage
 
