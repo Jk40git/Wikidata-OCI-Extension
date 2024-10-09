@@ -14,7 +14,6 @@
 
   "description": "This is an extension to look up data from Wikidata",
   "icons": {
-    "5": "Icon/1024px-Wikidata-logo.svg.png",
     "16": "Icon/Wiki_logo_16.png",
     "32": "Icon/Wiki_logo_32.png",
     "48": "Icon/Wiki_logo_48.png",
