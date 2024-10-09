@@ -37,7 +37,7 @@ https://github.com/user-attachments/assets/9a5a0316-ab46-48b4-b444-42af4e4928b3
 
 #### Chrome
 
-1. Download the extension from the [Chrome Web Store]().
+1. Download the extension from the [Chrome Web Store](https://chromewebstore.google.com/detail/wikidata-one-click-info/ooedcbicieekcihnnalhcmpenbhlfmnj).
 2. Click on the extension icon in the top-right corner to pin it.
 3. Highlight any word or phrase, click the extension icon, and see the summary!
 
