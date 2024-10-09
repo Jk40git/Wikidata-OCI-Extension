@@ -13,8 +13,9 @@
   "description": "This is an extension to look up data from Wikidata",
   "icons": {
     "5": "Icon/1024px-Wikidata-logo.svg.png",
-    "48": "Icon/Wiki_logo_3_update.png",
-    "44": "Icon/Wiki logo 5.png"
+    "32": "Icon/2872375-32.png",
+    "64": "Icon/2872375-64.png",
+    "128": "Icon/2872375-128.png"
   },
   "author": "Wikidata OCI team",
   "content_scripts": [
