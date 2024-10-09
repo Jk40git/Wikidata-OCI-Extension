@@ -2,7 +2,8 @@
 
 <p>It's always tedious to open a new tab or take up your dictionary to look for words' meanings or explanations while reading your favorite article, books, PDFs or when browsing and coming across a word you want to know about.
 </br>
-Wikidata OCI(One-Click-Info) Extension is here to help.</p>
+Wikidata OCI(One-Click-Info) Extension is here to help, WOCI is a multilingual extension that enables you to search for any item or word that you come across while reading or browsing online. This extension improves the accessibility and searchability of Wikidata's data. 
+The languages implemented are from wikidata, the user gets the data in the language selected from the structured data language available.</p>
 </br>
 
 **Wikidata OCI Extension** is an extension built with Wikidata API, when activated, will allow the user to select a word and click the extension to get a quick summary of the wikidata item or label selected or highlighted.
