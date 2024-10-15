@@ -662,7 +662,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return { search: resultsWithUrls }; // Return results with URLs
     } catch (error) {
       // Display error message in the UI
-      document.getElementById('error').innerText = error.message;
+      document.getElementById('popup').innerText = error.message;
       console.error(error);
     }
   }
