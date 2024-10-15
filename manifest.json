@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Wikidata One Click Info",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "action": {
     "default_icon": {
       "16": "Icon/Wiki_logo_16.png",
