@@ -617,13 +617,25 @@ document.addEventListener('DOMContentLoaded', function () {
     
 
     // fetch(`https://wikidata.org/w/rest.php/wikibase/v0/entities/items/Q24/descriptions/ar`)
-    fetch(`https://wikidata.org/w/rest.php/wikibase/v0/entities/items/Q14005/descriptions/en`)
-    .then((response) => {
-      console.log('response', response.data)
-    }).catch((error) => {
-      console.log('error', error)
-    });
+    // fetch(`https://wikidata.org/w/rest.php/wikibase/v0/entities/items/Q14005/descriptions/en`)
+    // .then((response) => {
+    //   console.log('response', response.data)
+    // }).catch((error) => {
+    //   console.log('error', error)
+    // });
+    const myHeaders = new Headers();
+    myHeaders.append("Cookie", "GeoIP=GH:AA:Accra:5.55:-0.20:v4; NetworkProbeLimit=0.001; WMF-Last-Access=17-Nov-2024; WMF-Last-Access-Global=17-Nov-2024");
 
+    const requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+      redirect: "follow"
+    };
+
+    fetch("https://wikidata.org/w/rest.php/wikibase/v0/entities/items/Q14005/descriptions/en", requestOptions)
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.error(error));
 
     if (currentWord) {
       fetchEntities(currentWord, selectedLanguage)
