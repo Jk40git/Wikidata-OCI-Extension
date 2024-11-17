@@ -378,7 +378,11 @@
 
 // });
 
+
+// const axios = require('axios');
+
 document.addEventListener('DOMContentLoaded', function () {
+
 
   let query = { active: true, currentWindow: true };
   chrome.tabs.query(query, readTabs);
@@ -610,6 +614,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const langElement = document.getElementById('lang');
     const selectedLanguage = langElement.value; // Get the selected value
 
+    
+
+    // fetch(`https://wikidata.org/w/rest.php/wikibase/v0/entities/items/Q24/descriptions/ar`)
+    fetch(`https://wikidata.org/w/rest.php/wikibase/v0/entities/items/Q14005/descriptions/en`)
+    .then((response) => {
+      console.log('response', response.data)
+    }).catch((error) => {
+      console.log('error', error)
+    });
+
+
     if (currentWord) {
       fetchEntities(currentWord, selectedLanguage)
         .then((data) => {
@@ -655,6 +670,9 @@ document.addEventListener('DOMContentLoaded', function () {
         fullurl: `https://${language}.wikipedia.org/wiki/${encodeURIComponent(entity.label)}`,
         description: entity.description,
       }));
+
+      console.log('resultsWithUrls', resultsWithUrls)
+
 
       // Clear any error message if language and results are valid
       document.getElementById('error').innerText = ''; // Clear the error
