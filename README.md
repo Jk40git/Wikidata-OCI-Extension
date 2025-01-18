@@ -64,7 +64,7 @@ We welcome contributions! If you find any bugs or have suggestions for improveme
   #### To Run the extension on your local machine :
   1. [fork this repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo) and [clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) your fork
      </br>
-  2. Open your browser and navigate to extensions from the three dots close to your profile picture click on the extensons then manage extensions.
+  2. Open your browser and navigate to extensions from the three dots close to your profile picture click on the Extensions then manage extensions.
   3. Navigate to load unpacked from the top of My extensions and load the extension that you have just cloned from your PC folders.
      
   #### Open an issue detailing your contribution, Make your contribution and open a pull request with a clear title and description.
