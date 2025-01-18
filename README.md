@@ -61,5 +61,13 @@ The seamless data in Wikidata OCI is possible, Thanks to the wonderful [Wikidata
 ## Contributing
 We welcome contributions! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
 
+  #### To Run the extension on your local machine :
+  1. [fork this repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo) and [clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) your fork
+     </br>
+  2. Open your browser and navigate to extensions from the three dots close to your profile picture click on the extensons then manage extensions.
+  3. Navigate to load unpacked from the top of My extensions and load the extension that you have just cloned from your PC folders.
+     
+  #### Open an issue detailing your contribution, Make your contribution and open a pull request with a clear title and description.
+  #### No package or build is required to run the extension locally or to contribute to this repo.
 ## License
 This project is licensed under the BSD 3-Clause License . See the [LICENSE](https://github.com/Jk40git/Wikidata-OCI-Extension/blob/main/LICENSE) file for details.
