@@ -679,7 +679,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const resultsWithUrls = data.search.map((entity) => ({
         id: entity.id,
         label: entity.label,
-        fullurl: `https://${language}.wikipedia.org/wiki/${encodeURIComponent(entity.label)}`,
+        fullurl: `https://hub.toolforge.org/${entity.id}?l=${language},auto`,
         description: entity.description,
       }));
 
