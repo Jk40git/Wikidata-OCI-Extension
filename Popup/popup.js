@@ -623,19 +623,20 @@ document.addEventListener('DOMContentLoaded', function () {
     // }).catch((error) => {
     //   console.log('error', error)
     // });
-    const myHeaders = new Headers();
-    myHeaders.append("Cookie", "GeoIP=GH:AA:Accra:5.55:-0.20:v4; NetworkProbeLimit=0.001; WMF-Last-Access=17-Nov-2024; WMF-Last-Access-Global=17-Nov-2024");
+    
+    // const myHeaders = new Headers();
+    // myHeaders.append("Cookie", "GeoIP=GH:AA:Accra:5.55:-0.20:v4; NetworkProbeLimit=0.001; WMF-Last-Access=17-Nov-2024; WMF-Last-Access-Global=17-Nov-2024");
 
-    const requestOptions = {
-      method: "GET",
-      headers: myHeaders,
-      redirect: "follow"
-    };
+    // const requestOptions = {
+    //   method: "GET",
+    //   headers: myHeaders,
+    //   redirect: "follow"
+    // };
 
-    fetch("https://wikidata.org/w/rest.php/wikibase/v0/entities/items/Q14005/descriptions/en", requestOptions)
-      .then((response) => response.text())
-      .then((result) => console.log(result))
-      .catch((error) => console.error(error));
+    // fetch("https://wikidata.org/w/rest.php/wikibase/v0/entities/items/Q14005/descriptions/en", requestOptions)
+    //   .then((response) => response.text())
+    //   .then((result) => console.log(result))
+    //   .catch((error) => console.error(error));
 
     if (currentWord) {
       fetchEntities(currentWord, selectedLanguage)
@@ -679,7 +680,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const resultsWithUrls = data.search.map((entity) => ({
         id: entity.id,
         label: entity.label,
-        fullurl: `https://hub.toolforge.org/${entity.id}?l=${language},auto`,
+        fullurl: `https://www.wikidata.org/wiki/Special:GoToLinkedPage/${language}wiki/${entity.id}`,
         description: entity.description,
       }));
 
